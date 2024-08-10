@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--ion-color-tik-tok: #ffffffe6;
+	--ion-color-tik-tok-rgb: 255,255,230;
+	--ion-color-tik-tok-contrast: #000000;
+	--ion-color-tik-tok-contrast-rgb: 0,0,0;
+	--ion-color-tik-tok-shade: #e0e0ca;
+	--ion-color-tik-tok-tint: #ffffe9;
+
+	--ion-color-tik-tok-button: #fe2c55;
+	--ion-color-tik-tok-button-rgb: 254,44,85;
+	--ion-color-tik-tok-button-contrast: #ffffff;
+	--ion-color-tik-tok-button-contrast-rgb: 0,0,0;
+	--ion-color-tik-tok-button-shade: #e0274b;
+	--ion-color-tik-tok-button-tint: #fe4166;
+}
+
+.ion-color-tik-tok {
+	--ion-color-base: var(--ion-color-tik-tok);
+	--ion-color-base-rgb: var(--ion-color-tik-tok-rgb);
+	--ion-color-contrast: var(--ion-color-tik-tok-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-tik-tok-contrast-rgb);
+	--ion-color-shade: var(--ion-color-tik-tok-shade);
+	--ion-color-tint: var(--ion-color-tik-tok-tint);
+}
+
+.ion-color-tik-tok-button {
+	--ion-color-base: var(--ion-color-tik-tok-button);
+	--ion-color-base-rgb: var(--ion-color-tik-tok-button-rgb);
+	--ion-color-contrast: var(--ion-color-tik-tok-button-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-tik-tok-button-contrast-rgb);
+	--ion-color-shade: var(--ion-color-tik-tok-button-shade);
+	--ion-color-tint: var(--ion-color-tik-tok-button-tint);
+}
