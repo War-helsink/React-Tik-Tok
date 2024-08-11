@@ -1,8 +1,6 @@
 export * from "./model";
 
 export {
-	useGetListQuery,
-	useGetUserQuery,
 	useGetUserVideosQuery,
-	tikTokApi,
+	userVideosApi,
 } from "./api/api";

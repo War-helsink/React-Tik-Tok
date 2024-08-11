@@ -1,6 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { tikTokApi } from "entities/tik-tok";
+import { feedApi } from "entities/feed";
+import { userApi } from "entities/user";
+import { userVideosApi } from "entities/user-videos";
 
 export const rootReducer = combineReducers({
-	[tikTokApi.reducerPath]: tikTokApi.reducer,
+	[feedApi.reducerPath]: feedApi.reducer,
+	[userApi.reducerPath]: userApi.reducer,
+	[userVideosApi.reducerPath]: userVideosApi.reducer,
 });

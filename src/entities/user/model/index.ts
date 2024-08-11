@@ -1,10 +1,10 @@
-import type { TikTokResponse } from "./base";
+import type { Response } from "shared/interfaces";
 
-export interface TikTokUserParams {
+export interface UserParams {
 	uniqueId: string;
 }
 
-export interface TikTokUserResponse extends TikTokResponse {
+export interface UserResponse extends Response {
 	data: DataUser;
 }
 

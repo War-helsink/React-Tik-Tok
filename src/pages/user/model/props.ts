@@ -1,9 +1,5 @@
-import type { User, UserStats, DataVideo } from "entities/tik-tok";
-
-export interface UserProps {
-	user: User;
-	stats: UserStats;
-}
+import type { User } from "entities/user";
+import type { UserVideoData } from "entities/user-videos";
 
 export interface UserInfoProps {
 	user: User;
@@ -29,6 +25,6 @@ export interface UserLikedProps {
 export interface UserVideoProps {
 	onPlay: () => void;
 
-	videoData: DataVideo;
+	videoData: UserVideoData;
 	playing: boolean;
 }

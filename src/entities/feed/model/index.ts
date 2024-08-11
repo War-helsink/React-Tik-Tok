@@ -1,14 +1,19 @@
-import type { TikTokResponse, MusicInfo, CommerceInfo, Author } from "./base";
+import type {
+	Response,
+	MusicInfo,
+	CommerceInfo,
+	Author,
+} from "shared/interfaces";
 
-export interface TikTokListParams {
+export interface FeedParams {
 	count?: number;
 }
 
-export interface TikTokListResponse extends TikTokResponse {
-	data: VideoData[];
+export interface FeedResponse extends Response {
+	data: FeedVideoData[];
 }
 
-export interface VideoData {
+export interface FeedVideoData {
 	aweme_id: string;
 	video_id: string;
 	region: string;

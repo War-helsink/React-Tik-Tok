@@ -1,4 +1,4 @@
-export interface TikTokResponse {
+export interface Response {
 	code: number;
 	msg: string;
 	processed_time: number;

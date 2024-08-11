@@ -1,23 +1,23 @@
-import type { TikTokResponse, MusicInfo, CommerceInfo, Author } from "./base";
+import type { Response, MusicInfo, CommerceInfo, Author } from "shared/interfaces";
 
-export interface TikTokUserVideosParams {
+export interface UserVideosParams {
 	uniqueId: string;
 	userId: string;
 	count?: number;
 	cursor?: number;
 }
 
-export interface TikTokUserVideosResponse extends TikTokResponse {
-	data: DataUserVideos;
+export interface UserVideosResponse extends Response {
+	data: UserVideosData;
 }
 
-export interface DataUserVideos {
-	videos: DataVideo[];
+export interface UserVideosData {
+	videos: UserVideoData[];
 	cursor: string;
 	hasMore: boolean;
 }
 
-export interface DataVideo {
+export interface UserVideoData {
 	aweme_id: string;
 	video_id: string;
 	region: string;

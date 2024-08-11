@@ -1,11 +1,11 @@
 import type { FC } from "react";
 
 // import { useGetListQuery } from "entities/tik-tok";
-import type { VideoData } from "entities/tik-tok";
+import type { FeedVideoData } from "entities/feed";
 import FeedItem from "../FeedItem";
 
 const Feed: FC = () => {
-	const feed: VideoData[] = [
+	const feed: FeedVideoData[] = [
 		{
 			aweme_id: "v1c044g50000cq82fvvog65q09345284gm0",
 			video_id: "7390451064438377735",

@@ -2,13 +2,13 @@ import { type FC, useState } from "react";
 
 import { IonText } from "@ionic/react";
 
-import type { DataUserVideos } from "entities/tik-tok";
+import type { UserVideosData } from "entities/user-videos";
 import type { UserVideosProps } from "../../model/props";
 
 import UserVideo from "../UserVideo";
 
 const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
-	const dataVideo: DataUserVideos = {
+	const dataVideo: UserVideosData = {
 		videos: [
 			{
 				aweme_id: "v1c044g50000cq82fvvog65q09o84gm0666",

@@ -14,7 +14,7 @@ const FeedVideoDetails: FC<FeedVideoProps> = ({
 	videoData,
 	playing = false,
 }) => {
-	const titleWords = useMemo(() => {
+	const titleWords = useMemo<string[]>(() => {
 		return videoData.title.trim().split(" ");
 	}, [videoData]);
 

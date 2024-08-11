@@ -1,7 +1,7 @@
-import type { VideoData } from "entities/tik-tok";
+import type { FeedVideoData } from "entities/feed";
 
 export interface FeedItemProps {
-	videoData: VideoData;
+	videoData: FeedVideoData;
 }
 
 export interface FeedActionContainerProps {
@@ -17,5 +17,5 @@ export interface FeedActionContainerProps {
 export interface FeedVideoProps {
 	url: string;
 	playing?: boolean;
-	videoData: VideoData;
+	videoData: FeedVideoData;
 }
