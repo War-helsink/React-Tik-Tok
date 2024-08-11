@@ -12,8 +12,6 @@ import {
 	IonList,
 } from "@ionic/react";
 
-import { Footer } from "widgets/footer";
-
 import styles from "./styles.module.scss";
 
 interface MenuWrapperProps {
@@ -42,7 +40,6 @@ const MenuWrapper: FC<MenuWrapperProps> = ({ children }) => {
 						
 					</IonList>
 				</IonContent>
-				<Footer />
 			</IonMenu>
 			<IonPage id="main-content">{children}</IonPage>
 		</>

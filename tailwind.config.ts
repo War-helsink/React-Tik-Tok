@@ -8,8 +8,10 @@ const config: Config = {
 				"auto-fit-minmax": "repeat(auto-fit, minmax(220px, 1fr))",
 			},
 		},
-
 		colors: {
+			background: {
+				shadow: "linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(12, 12, 12, 0.2) 100%);"
+			},
 			primary: {
 				default: "var(--ion-color-primary)",
 				contrast: "var(--ion-color-primary-contrast)",
@@ -85,13 +87,11 @@ const config: Config = {
 				"900": "var(--ion-color-step-900)",
 				"950": "var(--ion-color-step-950)",
 			},
-			tic: {
-				tok: {
-					default: "var(--ion-color-tik-tok)",
-					contrast: "var(--ion-color-tik-tok-contrast)",
-					shade: "var(--ion-color-tik-tok-shade)",
-					tint: "var(--ion-color-tik-tok-tint)",
-				},
+			"tik-tok": {
+				default: "var(--ion-color-tik-tok)",
+				contrast: "var(--ion-color-tik-tok-contrast)",
+				shade: "var(--ion-color-tik-tok-shade)",
+				tint: "var(--ion-color-tik-tok-tint)",
 			},
 		},
 	},

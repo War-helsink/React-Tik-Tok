@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "widgets/header";
-import { Footer } from "widgets/footer";
 
 import { IonContent, IonButton, IonText } from "@ionic/react";
 import { Link } from "react-router-dom";
@@ -28,7 +27,6 @@ class ErrorLayouts extends React.Component {
 						</Link>
 					</div>
 				</IonContent>
-				<Footer />
 			</MenuWrapper>
 		);
 	}

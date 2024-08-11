@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
 	IonHeader,
@@ -6,6 +7,7 @@ import {
 	IonButtons,
 	IonButton,
 	IonIcon,
+	IonMenuButton,
 } from "@ionic/react";
 import { logoGithub } from "ionicons/icons";
 
@@ -19,6 +21,15 @@ class Header extends React.Component<unknown> {
 		return (
 			<IonHeader>
 				<IonToolbar className={styles.header}>
+					<IonButtons slot="start">
+						<Link to={"/"}>
+							<IonButton color="dark" className="hidden md:block normal-case">
+								<h1 className="text-3xl font-bold">Tik Tok</h1>
+							</IonButton>
+						</Link>
+						<IonMenuButton color="dark" className="block md:hidden" />
+					</IonButtons>
+
 					<div className={styles.navbar} slot="end" />
 
 					<IonButtons slot="end">
