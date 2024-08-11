@@ -4,6 +4,7 @@ import {
 	createContext,
 	useState,
 	useEffect,
+	useContext,
 } from "react";
 
 export interface IThemeContext {
@@ -12,6 +13,16 @@ export interface IThemeContext {
 }
 
 export const ThemeContext = createContext<IThemeContext | undefined>(undefined);
+
+export const useTheme = () => {
+	const context = useContext(ThemeContext);
+
+	if (!context) {
+		throw new Error("context error");
+	}
+
+	return context;
+};
 
 interface ThemeProviderProps {
 	children: ReactNode;

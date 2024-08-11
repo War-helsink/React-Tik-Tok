@@ -56,7 +56,7 @@ const Feed: FC = () => {
 				unique_id: "sangitathokar1",
 				nickname: "🔪sangitathokar1🔥",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/14cb863e84e8fe687f797381e4e64166~c5_300x300.jpeg?lk3s=45126217&nonce=69191&refresh_token=a9da46350fb80f942a4d0483d530ebc8&x-expires=1723370400&x-signature=WvyO0FIvs8lHNT%2FZRifiIIt2C3I%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -111,7 +111,7 @@ const Feed: FC = () => {
 				unique_id: "petsdance7",
 				nickname: "petsdance7",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/14cb863e84e8fe687f797381e4e64166~c5_300x300.jpeg?lk3s=45126217&nonce=69191&refresh_token=a9da46350fb80f942a4d0483d530ebc8&x-expires=1723370400&x-signature=WvyO0FIvs8lHNT%2FZRifiIIt2C3I%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -165,7 +165,7 @@ const Feed: FC = () => {
 				unique_id: "anjali.nepali",
 				nickname: "Anjali___Nepali",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/14cb863e84e8fe687f797381e4e64166~c5_300x300.jpeg?lk3s=45126217&nonce=69191&refresh_token=a9da46350fb80f942a4d0483d530ebc8&x-expires=1723370400&x-signature=WvyO0FIvs8lHNT%2FZRifiIIt2C3I%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -220,7 +220,7 @@ const Feed: FC = () => {
 				unique_id: "sabina",
 				nickname: "Sabina",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/14cb863e84e8fe687f797381e4e64166~c5_300x300.jpeg?lk3s=45126217&nonce=69191&refresh_token=a9da46350fb80f942a4d0483d530ebc8&x-expires=1723370400&x-signature=WvyO0FIvs8lHNT%2FZRifiIIt2C3I%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -274,7 +274,7 @@ const Feed: FC = () => {
 				unique_id: "daikiti775",
 				nickname: "Daikiti",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/14cb863e84e8fe687f797381e4e64166~c5_300x300.jpeg?lk3s=45126217&nonce=69191&refresh_token=a9da46350fb80f942a4d0483d530ebc8&x-expires=1723370400&x-signature=WvyO0FIvs8lHNT%2FZRifiIIt2C3I%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -330,7 +330,7 @@ const Feed: FC = () => {
 				unique_id: "sabina",
 				nickname: "Sabina",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/14cb863e84e8fe687f797381e4e64166~c5_300x300.jpeg?lk3s=45126217&nonce=69191&refresh_token=a9da46350fb80f942a4d0483d530ebc8&x-expires=1723370400&x-signature=WvyO0FIvs8lHNT%2FZRifiIIt2C3I%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			},
 		},
 	];

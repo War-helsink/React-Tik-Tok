@@ -1,10 +1,11 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 
 import { IonApp } from "@ionic/react";
 
 import { ThemeProvider } from "./providers/ThemeContext";
+import { LanguageProvider } from "./providers/LanguageContext";
 import { store } from "./appStore";
 
 import { HelmetProvider } from "react-helmet-async";
@@ -22,15 +23,17 @@ setupIonicReact();
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<React.StrictMode>
+	<StrictMode>
 		<IonApp>
-			<ThemeProvider>
-				<Provider store={store}>
-					<HelmetProvider>
-						<RouterProvider router={appRouter} />
-					</HelmetProvider>
-				</Provider>
-			</ThemeProvider>
+			<LanguageProvider>
+				<ThemeProvider>
+					<Provider store={store}>
+						<HelmetProvider>
+							<RouterProvider router={appRouter} />
+						</HelmetProvider>
+					</Provider>
+				</ThemeProvider>
+			</LanguageProvider>
 		</IonApp>
-	</React.StrictMode>,
+	</StrictMode>,
 );

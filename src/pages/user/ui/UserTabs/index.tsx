@@ -1,4 +1,5 @@
 import { type FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
 	IonIcon,
@@ -20,6 +21,7 @@ import UserVideos from "../UserVideos";
 
 const UserTabs: FC<UserTabsProps> = ({ user }) => {
 	const [segment, setSegment] = useState("video");
+	const { t } = useTranslation();
 
 	const handleChangeSegment = (ev: CustomEvent<SegmentChangeEventDetail>) => {
 		setSegment(ev.detail.value as string);
@@ -34,12 +36,12 @@ const UserTabs: FC<UserTabsProps> = ({ user }) => {
 					className="min-w-fit"
 				>
 					<IonSegmentButton value="video">
-						<IonLabel>Videos</IonLabel>
+						<IonLabel>{t("videos")}</IonLabel>
 					</IonSegmentButton>
 					<IonSegmentButton value="liked">
 						<IonLabel className="m-0">
-							<IonIcon icon={lockClosed} />
-							Liked
+							<IonIcon className="mr-1.5" icon={lockClosed} />
+							{t("liked")}
 						</IonLabel>
 					</IonSegmentButton>
 				</IonSegment>

@@ -1,5 +1,5 @@
 import { type FC, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import { IonText } from "@ionic/react";
 
 import type { UserVideosData } from "entities/user-videos";
@@ -8,6 +8,8 @@ import type { UserVideosProps } from "../../model/props";
 import UserVideo from "../UserVideo";
 
 const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
+	const { t } = useTranslation();
+
 	const dataVideo: UserVideosData = {
 		videos: [
 			{
@@ -346,7 +348,6 @@ const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
 				},
 				is_top: 0,
 			},
-
 		],
 		cursor: "1722680100000",
 		hasMore: true,
@@ -368,9 +369,11 @@ const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
 			))}
 		</div>
 	) : (
-		<div className={`${hidden ? "hidden" : "flex"} w-full h-full flex-col justify-center items-center flex-grow p-5`}>
-			<IonText className="text-3xl">This user has no videos.</IonText>
-			<p className="opacity-50">Videos are currently hidden</p>
+		<div
+			className={`${hidden ? "hidden" : "flex"} w-full h-full flex-col justify-center items-center flex-grow p-5`}
+		>
+			<IonText className="text-3xl">{t("userVideos.noVideos")}</IonText>
+			<p className="opacity-50">{t("userVideos.hidden")}</p>
 		</div>
 	);
 };

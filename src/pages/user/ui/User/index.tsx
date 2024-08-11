@@ -15,7 +15,7 @@ const User: FC = () => {
 			avatarThumb:
 				"https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310048624166535211~c5_100x100.jpeg?lk3s=a5d48078&nonce=80513&refresh_token=ff6a37869f6503674a8ea7d698edf030&x-expires=1723323600&x-signature=tVZUozt%2FFb5ZZFk8EJET4cqXN6Y%3D&shp=a5d48078&shcp=2472a6c6",
 			avatarMedium:
-				"https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310048624166535211~c5_720x720.jpeg?lk3s=a5d48078&nonce=59492&refresh_token=a2a61aa5e709069ee39b3330603ebde9&x-expires=1723363200&x-signature=UFe4P8bflzPmV4Kn8YdIFcxcBq4%3D&shp=a5d48078&shcp=2472a6c6",
+				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
 			avatarLarger:
 				"https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310048624166535211~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=28151&refresh_token=cc1a52e51fb9954272f6aae682f26f25&x-expires=1723323600&x-signature=VjYB83DtV2yhbhCafShk9SCkh2Q%3D&shp=a5d48078&shcp=2472a6c6",
 			signature: "WANNA MAKE A TIKTOK!?",

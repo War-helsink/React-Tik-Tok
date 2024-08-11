@@ -1,5 +1,6 @@
 import { type FC, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { IonAvatar, IonButton, IonIcon } from "@ionic/react";
 
@@ -22,26 +23,28 @@ const UserInfo: FC<UserInfoProps> = ({
 	heartCount,
 	videoCount,
 }) => {
+	const { t } = useTranslation();
+
 	const statsData = useMemo(
 		() => [
 			{
-				text: "Following",
+				text: t("following"),
 				count: followingCount,
 			},
 			{
-				text: "Followers",
+				text: t("followers"),
 				count: followerCount,
 			},
 			{
-				text: "Likes",
+				text: t("likes"),
 				count: heartCount,
 			},
 			{
-				text: "Videos",
+				text: t("videos"),
 				count: videoCount,
 			},
 		],
-		[followingCount, followerCount, heartCount, videoCount],
+		[t, followingCount, followerCount, heartCount, videoCount],
 	);
 
 	const socialsData = useMemo(
@@ -103,8 +106,12 @@ const UserInfo: FC<UserInfoProps> = ({
 				<h2 className="max-w-full">{user.signature}</h2>
 
 				<div className="flex gap-3">
-					<IonButton color="tik-tok-button">Follow</IonButton>
-					<IonButton color="light">Message</IonButton>
+					<IonButton className="normal-case min-w-28" color="tik-tok-button">
+						{t("follow")}
+					</IonButton>
+					<IonButton className="normal-case min-w-28" color="light">
+						{t("message")}
+					</IonButton>
 					<IonButton color="light">
 						<IonIcon slot="icon-only" icon={arrowRedoOutline} />
 					</IonButton>
