@@ -1,6 +1,6 @@
 export * from "./model";
 
 export {
-	useGetFeedQuery,
+	useGetFeedListQuery,
 	feedApi,
 } from "./api/api";

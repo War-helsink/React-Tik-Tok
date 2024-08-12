@@ -6,6 +6,8 @@
 	"likes": "Лайки",
 	"liked": "Лайкнул(-а)",
 	"videos": "Видео",
+	"search": "Поиск",
+	"searchTitle": "Поиск по теме «{{keywords}}» в TikTok | Поиск в TikTok",
 
 	"userLiked": {
 		"title": "Пользователь скрыл список видео, которые он лайкнул",

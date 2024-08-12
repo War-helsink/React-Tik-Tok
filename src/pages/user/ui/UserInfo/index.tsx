@@ -71,7 +71,7 @@ const UserInfo: FC<UserInfoProps> = ({
 	return (
 		<div className="flex gap-7">
 			<IonAvatar className="size-56">
-				<img alt="Silhouette of a person's head" src={user.avatarMedium} />
+				<img alt="Avatar" src={user.avatarMedium} />
 			</IonAvatar>
 			<div className="flex-grow flex flex-col gap-3">
 				<div className="flex flex-wrap items-center gap-3">

@@ -5,15 +5,15 @@ export interface UserParams {
 }
 
 export interface UserResponse extends Response {
-	data: DataUser;
-}
-
-export interface DataUser {
-	user: User;
-	stats: UserStats;
+	data: User;
 }
 
 export interface User {
+	user: UserData;
+	stats: UserStats;
+}
+
+export interface UserData {
 	id: string;
 	uniqueId: string;
 	nickname: string;

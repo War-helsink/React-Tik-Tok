@@ -1,15 +1,15 @@
 import type { FC } from "react";
-import FeedVideoDetails from "../FeedDetails";
-import FeedActionContainer from "../FeedActionContainer";
+import VideoDetails from "../VideoDetails";
+import VideoActionContainer from "../VideoActionContainer";
 
-import type { FeedItemProps } from "../../model/props";
+import type { VideoItemProps } from "../../model/props";
 
-const FeedItem: FC<FeedItemProps> = ({ videoData }) => {
+const VideoItem: FC<VideoItemProps> = ({ videoData, playing = false }) => {
 	return (
 		<article className="min-h-full max-h-full relative flex gap-5 justify-center items-end md:py-5">
-			<FeedVideoDetails url={videoData.play} videoData={videoData} />
+			<VideoDetails url={videoData.play} videoData={videoData} playing={playing} />
 
-			<FeedActionContainer
+			<VideoActionContainer
 				avatarUrl={videoData.author.avatar}
 				uniqueId={videoData.author.unique_id}
 				diggCount={videoData.digg_count}
@@ -21,4 +21,4 @@ const FeedItem: FC<FeedItemProps> = ({ videoData }) => {
 	);
 };
 
-export default FeedItem;
+export default VideoItem;

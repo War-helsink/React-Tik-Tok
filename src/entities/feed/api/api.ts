@@ -1,6 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import type { FeedResponse, FeedParams } from "../model";
+import type {
+	FeedListResponse,
+	FeedSearchResponse,
+	FeedParams,
+} from "../model";
 
 const RAPIDAPI_HOST = import.meta.env.VITE_RAPIDAPI_HOST;
 const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
@@ -11,7 +15,7 @@ export const feedApi = createApi({
 	reducerPath: "feedApi",
 	baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
 	endpoints: (builder) => ({
-		getFeed: builder.query<FeedResponse, FeedParams>({
+		getFeedList: builder.query<FeedListResponse, FeedParams>({
 			query: (params) => {
 				const { count = 10 } = params || {};
 				return {
@@ -27,7 +31,34 @@ export const feedApi = createApi({
 				};
 			},
 		}),
+
+		getFeedSearch: builder.query<FeedSearchResponse, FeedParams>({
+			query: (params) => {
+				const {
+					count = 10,
+					cursor = 0,
+					keywords,
+					publishTime = 0,
+					sortType,
+				} = params || {};
+				return {
+					url: "feed/search",
+					params: {
+						region: REGION,
+						count: count,
+						keywords: keywords,
+						cursor: cursor,
+						publish_time: publishTime,
+						sort_type: sortType,
+					},
+					headers: {
+						"x-rapidapi-key": RAPIDAPI_KEY,
+						"x-rapidapi-host": RAPIDAPI_HOST,
+					},
+				};
+			},
+		}),
 	}),
 });
 
-export const { useGetFeedQuery } = feedApi;
+export const { useGetFeedListQuery } = feedApi;

@@ -4,6 +4,7 @@ import ErrorLayouts from "./layouts/ErrorLayouts";
 
 import { FeedPage } from "pages/feed";
 import { UserPage } from "pages/user";
+import { SearchPage } from "pages/search";
 
 export const appRouter = createBrowserRouter([
 	{
@@ -11,6 +12,7 @@ export const appRouter = createBrowserRouter([
 		errorElement: <ErrorLayouts />,
 		children: [
 			{ path: "/", element: <FeedPage /> },
+			{ path: "/search", element: <SearchPage /> },
 			{ path: "/user/:uniqueId", element: <UserPage /> },
 		],
 	},

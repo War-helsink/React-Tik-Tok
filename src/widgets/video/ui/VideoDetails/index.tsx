@@ -7,9 +7,9 @@ import { musicalNotes } from "ionicons/icons";
 import { Link } from "react-router-dom";
 import VideoPlayer from "shared/ui/VideoPlayer";
 
-import type { FeedVideoProps } from "../../model/props";
+import type { VideoDetailsProps } from "../../model/props";
 
-const FeedVideoDetails: FC<FeedVideoProps> = ({
+const VideoDetails: FC<VideoDetailsProps> = ({
 	url,
 	videoData,
 	playing = false,
@@ -68,4 +68,4 @@ const FeedVideoDetails: FC<FeedVideoProps> = ({
 	);
 };
 
-export default FeedVideoDetails;
+export default VideoDetails;

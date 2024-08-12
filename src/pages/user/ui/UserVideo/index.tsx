@@ -19,10 +19,10 @@ const UserVideo: FC<UserVideoProps> = ({
 	};
 
 	return (
-		<div className="w-full flex flex-col gap-1">
+		<div className="w-full h-full min-h-96 flex flex-col gap-1">
 			<Link
 				to={`/video/${videoData.video_id}`}
-				className="relative"
+				className="relative w-full h-full"
 				onMouseOver={handleMouseOver}
 			>
 				<VideoPlayer

@@ -1,8 +1,12 @@
-import type { User } from "entities/user";
-import type { UserVideoData } from "entities/user-videos";
+import type { UserData, User } from "entities/user";
+import type { VideoData } from "entities/user-videos";
+
+export interface UserProps {
+	user: User;
+}
 
 export interface UserInfoProps {
-	user: User;
+	user: UserData;
 	followingCount: number;
 	followerCount: number;
 	heartCount: number;
@@ -10,7 +14,7 @@ export interface UserInfoProps {
 }
 
 export interface UserTabsProps {
-	user: User;
+	user: UserData;
 }
 
 export interface UserVideosProps {
@@ -25,6 +29,6 @@ export interface UserLikedProps {
 export interface UserVideoProps {
 	onPlay: () => void;
 
-	videoData: UserVideoData;
+	videoData: VideoData;
 	playing: boolean;
 }

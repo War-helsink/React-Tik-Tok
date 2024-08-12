@@ -31,7 +31,9 @@ const Header: FC = () => {
 					<IonMenuButton color="dark" className="block md:hidden" />
 				</IonButtons>
 
-				<Search />
+				<div className="w-full flex justify-center">
+					<Search />
+				</div>
 
 				<div className={styles.navbar} slot="end" />
 

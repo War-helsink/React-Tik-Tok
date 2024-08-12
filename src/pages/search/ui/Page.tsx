@@ -1,11 +1,18 @@
-import type { FC } from "react";
+import { type FC, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-// import { useGetListQuery } from "entities/tik-tok";
-import type { FeedVideoData } from "entities/feed";
-import FeedItem from "../FeedItem";
+import type { VideoData } from "shared/interfaces";
+import SearchVideoItem from "./SearchVideoItem";
 
-const Feed: FC = () => {
-	const feed: FeedVideoData[] = [
+const SearchPage: FC = () => {
+	const [searchParams] = useSearchParams();
+	const keywords = searchParams.get("q");
+	const { t } = useTranslation();
+
+	const videosData: VideoData[] = [
 		{
 			aweme_id: "v1c044g50000cq82fvvog65q09345284gm0",
 			video_id: "7390451064438377735",
@@ -18,7 +25,7 @@ const Feed: FC = () => {
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/18ed99fd46534e9ab6cdc7cd95139ab3_1720723488~tplv-tiktokx-360p.jpeg",
 			duration: 9,
-			play: "https://v16m-default.akamaized.net/e1cca07baaa5ecc93ede9d27d8d58c48/66b8de69/video/tos/alisg/tos-alisg-pve-0037c001/oQOGLCVd8IicmNXLIQJNIeeHg5lXMEAS2DejA8/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=7656&bt=3828&cs=0&ds=3&ft=XE5bCqT0m7jPD12TLL173wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=O2lmOjc4aDpkZDk6PGZpM0BpM21vb3I5cnJ4czMzODczNEBhYjEtMDY1NmAxNF5iLS8yYSNjcjFnMmRzMjJgLS1kMS1zcw%3D%3D&vvpl=1&l=2024081109525226209811B948C9D3EAE5&btag=e00088000&shp=6da16bae&shcp=-",
+			play: "https://v16m-default.akamaized.net/c2a40ab6a4ab6a9e30874d7a42a6d704/66babb03/video/tos/alisg/tos-alisg-pve-0037c001/oA0CfdRExfQ4uIvMA9gIji0FcfdiUcIoDD0CAg/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=4904&bt=2452&cs=0&ds=3&ft=XE5bCqT0m7jPD128in173wU8MYyKMeF~O5&mime_type=video_mp4&qs=0&rc=NmY0Z2ZoOWZoODg1OTlkNUBpM3Y4aHQ5cmlyczMzODczNEAyLy1hLzJgXl4xYDBhLy01YSNhLWRjMmRzaGJgLS1kMTFzcw%3D%3D&vvpl=1&l=20240812194627CA581982D906232B69BA&btag=e00088000&shp=6da16bae&shcp=-",
 			wmplay:
 				"https://v16m-default.akamaized.net/34c175e9da57410fa793b55d0b2f8f71/66b43ce8/video/tos/alisg/tos-alisg-pve-0037c001/oYffZQCuENnYIAiWKCCiAI9BCpBsIEjQf64AQD/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2496&bt=1248&cs=0&ds=3&ft=XE5bCqT0m7jPD12lEb273wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Zjw8ODRlOjM3OGZoZjZkZ0BpM2o7PHQ5cnk1dDMzODczNEA2MDQuY2FiNV8xMy42NDUvYSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=20240807213454994B5DE04EB7BA0B4649&btag=e00088000",
 			music:
@@ -56,7 +63,7 @@ const Feed: FC = () => {
 				unique_id: "sangitathokar1",
 				nickname: "🔪sangitathokar1🔥",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/7353798309405786133~c5_300x300.jpeg?lk3s=45126217&nonce=49521&refresh_token=2d7d53fe7068c69ea9611d3941699e2b&x-expires=1723543200&x-signature=RCtepbZw%2BomsEKtRN%2BTaplyPUI4%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -73,7 +80,7 @@ const Feed: FC = () => {
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3ab3292b58764c07aa20aa39516b5859_1717821785~tplv-tiktokx-360p.jpeg",
 			duration: 95,
-			play: "https://v16m-default.akamaized.net/518d43931057b6280a0272fb9f0d2998/66b8de6a/video/tos/alisg/tos-alisg-pve-0037c001/oopQgEGuU1zAan5GtDiTAiKCIAMB6wuoMIfNUH/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=5056&bt=2528&cs=0&ds=3&ft=XE5bCqT0m7jPD12TLL173wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=PGU6ZWg4NWVlODlkZzNkOEBpMzprZW85cnE0czMzODczNEBeNC02MDQvXjQxNTVeYjA0YSNhNTZxMmRjYl5gLS1kMS1zcw%3D%3D&vvpl=1&l=2024081109525226209811B948C9D3EAE5&btag=e00088000&shp=6da16bae&shcp=-",
+			play: "https://v16m-default.akamaized.net/22ec38ff53e2ad4c4116bb764d21097a/66babb98/video/tos/alisg/tos-alisg-pve-0037c001/oYZSIQ8qwDAnZOR7oWFfBRmQFE1guBIcESfNxE/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=1758&bt=879&cs=0&ds=3&ft=XE5bCqT0m7jPD128in173wU8MYyKMeF~O5&mime_type=video_mp4&qs=0&rc=OGY6aGY4ZGU0OjhmOzs6NUBpM2hlNnk5cmZwczMzODczNEBfXjAzNTU0Xi0xMTI2MzNeYSNyX2ZpMmQ0NmxgLS1kMS1zcw%3D%3D&vvpl=1&l=20240812194627CA581982D906232B69BA&btag=e00090000&shp=6da16bae&shcp=-",
 			wmplay:
 				"https://v16m-default.akamaized.net/d8a0098a8b4e41fbb520dbe65cf7867f/66b5ee0a/video/tos/alisg/tos-alisg-pve-0037c001/4b5oAIfBQIfCBaEAEBpOA4AcCU8uApnEFCIAfBJHgBgPQOQCAGIA/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2446&bt=1223&cs=0&ds=3&ft=XE5bCqT0m7jPD12lEb273wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=ZDk2OGQ4ZGhkNGZoNjpmN0BpM2o7PHQ5cnk1dDMzODczNEAzLmJmYTVgX2AxNi5gNGAuYSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=2024080820351135A5C32574DDFD0B1D7A&btag=e00088000",
 			music:
@@ -111,7 +118,7 @@ const Feed: FC = () => {
 				unique_id: "petsdance7",
 				nickname: "petsdance7",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/7353798309405786133~c5_300x300.jpeg?lk3s=45126217&nonce=49521&refresh_token=2d7d53fe7068c69ea9611d3941699e2b&x-expires=1723543200&x-signature=RCtepbZw%2BomsEKtRN%2BTaplyPUI4%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -127,7 +134,7 @@ const Feed: FC = () => {
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/18ed99fd46534e9ab6cdc7cd95139ab3_1720723488~tplv-tiktokx-360p.jpeg",
 			duration: 9,
-			play: "https://v16m-default.akamaized.net/ef4186c803e2cfd1bca0f8e25316518d/66b8dea6/video/tos/alisg/tos-alisg-pve-0037c001/oUaYQIfEGI8hzF0fAIeMANQ6aLehTaGRW7PGlY/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=3988&bt=1994&cs=0&ds=3&ft=XE5bCqT0m7jPD12TLL173wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Ozs2NGY2aWQ0ZGdnNzQ2OkBpanlqbng5cjpmdDMzODczNEAzNjYtNjYvNjExY15iXmFfYSM0bjFzMmRzcGBgLS1kMTFzcw%3D%3D&vvpl=1&l=2024081109525226209811B948C9D3EAE5&btag=e00090000&shp=6da16bae&shcp=-",
+			play: "https://v16m-default.akamaized.net/487ef1a188ec4a45d4d50bf7ce8d7316/66babafd/video/tos/alisg/tos-alisg-pve-0037c001/o4IAsCiECWBBjvAQfAiCiPQDf64QONEIKCIfn0/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2732&bt=1366&cs=0&ds=3&ft=XE5bCqT0m7jPD128in173wU8MYyKMeF~O5&mime_type=video_mp4&qs=0&rc=PDRoNzQ3ZDtlNWQ3NjdoOUBpM2o7PHQ5cnk1dDMzODczNEAtNmMwXzEyNWIxXmI0NjU1YSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=20240812194627CA581982D906232B69BA&btag=e00088000&shp=6da16bae&shcp=-",
 			wmplay:
 				"https://v16m-default.akamaized.net/34c175e9da57410fa793b55d0b2f8f71/66b43ce8/video/tos/alisg/tos-alisg-pve-0037c001/oYffZQCuENnYIAiWKCCiAI9BCpBsIEjQf64AQD/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2496&bt=1248&cs=0&ds=3&ft=XE5bCqT0m7jPD12lEb273wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Zjw8ODRlOjM3OGZoZjZkZ0BpM2o7PHQ5cnk1dDMzODczNEA2MDQuY2FiNV8xMy42NDUvYSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=20240807213454994B5DE04EB7BA0B4649&btag=e00088000",
 			music:
@@ -165,7 +172,7 @@ const Feed: FC = () => {
 				unique_id: "anjali.nepali",
 				nickname: "Anjali___Nepali",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/7353798309405786133~c5_300x300.jpeg?lk3s=45126217&nonce=49521&refresh_token=2d7d53fe7068c69ea9611d3941699e2b&x-expires=1723543200&x-signature=RCtepbZw%2BomsEKtRN%2BTaplyPUI4%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -182,7 +189,7 @@ const Feed: FC = () => {
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3ab3292b58764c07aa20aa39516b5859_1717821785~tplv-tiktokx-360p.jpeg",
 			duration: 95,
-			play: "https://v16m-default.akamaized.net/ef4186c803e2cfd1bca0f8e25316518d/66b8dea6/video/tos/alisg/tos-alisg-pve-0037c001/oUaYQIfEGI8hzF0fAIeMANQ6aLehTaGRW7PGlY/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=3988&bt=1994&cs=0&ds=3&ft=XE5bCqT0m7jPD12TLL173wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Ozs2NGY2aWQ0ZGdnNzQ2OkBpanlqbng5cjpmdDMzODczNEAzNjYtNjYvNjExY15iXmFfYSM0bjFzMmRzcGBgLS1kMTFzcw%3D%3D&vvpl=1&l=2024081109525226209811B948C9D3EAE5&btag=e00090000&shp=6da16bae&shcp=-",
+			play: "https://v16m-default.akamaized.net/94926f29518802b7ac423abdf93ea811/66babb08/video/tos/alisg/tos-alisg-pve-0037c001/oQOGLCVd8IicmNXLIQJNIeeHg5lXMEAS2DejA8/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=7656&bt=3828&cs=0&ds=3&ft=XE5bCqT0m7jPD128in173wU8MYyKMeF~O5&mime_type=video_mp4&qs=0&rc=O2lmOjc4aDpkZDk6PGZpM0BpM21vb3I5cnJ4czMzODczNEBhYjEtMDY1NmAxNF5iLS8yYSNjcjFnMmRzMjJgLS1kMS1zcw%3D%3D&vvpl=1&l=20240812194627CA581982D906232B69BA&btag=e00088000&shp=6da16bae&shcp=-",
 			wmplay:
 				"https://v16m-default.akamaized.net/d8a0098a8b4e41fbb520dbe65cf7867f/66b5ee0a/video/tos/alisg/tos-alisg-pve-0037c001/4b5oAIfBQIfCBaEAEBpOA4AcCU8uApnEFCIAfBJHgBgPQOQCAGIA/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2446&bt=1223&cs=0&ds=3&ft=XE5bCqT0m7jPD12lEb273wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=ZDk2OGQ4ZGhkNGZoNjpmN0BpM2o7PHQ5cnk1dDMzODczNEAzLmJmYTVgX2AxNi5gNGAuYSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=2024080820351135A5C32574DDFD0B1D7A&btag=e00088000",
 			music:
@@ -220,7 +227,7 @@ const Feed: FC = () => {
 				unique_id: "sabina",
 				nickname: "Sabina",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/7353798309405786133~c5_300x300.jpeg?lk3s=45126217&nonce=49521&refresh_token=2d7d53fe7068c69ea9611d3941699e2b&x-expires=1723543200&x-signature=RCtepbZw%2BomsEKtRN%2BTaplyPUI4%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -236,7 +243,7 @@ const Feed: FC = () => {
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/18ed99fd46534e9ab6cdc7cd95139ab3_1720723488~tplv-tiktokx-360p.jpeg",
 			duration: 9,
-			play: "https://v16m-default.akamaized.net/ef4186c803e2cfd1bca0f8e25316518d/66b8dea6/video/tos/alisg/tos-alisg-pve-0037c001/oUaYQIfEGI8hzF0fAIeMANQ6aLehTaGRW7PGlY/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=3988&bt=1994&cs=0&ds=3&ft=XE5bCqT0m7jPD12TLL173wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Ozs2NGY2aWQ0ZGdnNzQ2OkBpanlqbng5cjpmdDMzODczNEAzNjYtNjYvNjExY15iXmFfYSM0bjFzMmRzcGBgLS1kMTFzcw%3D%3D&vvpl=1&l=2024081109525226209811B948C9D3EAE5&btag=e00090000&shp=6da16bae&shcp=-",
+			play: "https://v16m-default.akamaized.net/a5f66d74ca0a0d000d724fdcd11c0c34/66babb4c/video/tos/alisg/tos-alisg-pve-0037c001/oUIqIIAzTLcSTiRRydBB9wQCotAfATgQwEXDii/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=4284&bt=2142&cs=0&ds=3&ft=XE5bCqT0m7jPD128in173wU8MYyKMeF~O5&mime_type=video_mp4&qs=0&rc=aDg6PDw0aTtoNDU6ZDtlNkBpamc0M2w5cjw3czMzODczNEAyL14zY18yXzQxNS4zLTBgYSNiMHJkMmRzZ2JgLS1kMS1zcw%3D%3D&vvpl=1&l=20240812194627CA581982D906232B69BA&btag=e00090000&shp=6da16bae&shcp=-",
 			wmplay:
 				"https://v16m-default.akamaized.net/34c175e9da57410fa793b55d0b2f8f71/66b43ce8/video/tos/alisg/tos-alisg-pve-0037c001/oYffZQCuENnYIAiWKCCiAI9BCpBsIEjQf64AQD/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2496&bt=1248&cs=0&ds=3&ft=XE5bCqT0m7jPD12lEb273wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Zjw8ODRlOjM3OGZoZjZkZ0BpM2o7PHQ5cnk1dDMzODczNEA2MDQuY2FiNV8xMy42NDUvYSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=20240807213454994B5DE04EB7BA0B4649&btag=e00088000",
 			music:
@@ -274,7 +281,7 @@ const Feed: FC = () => {
 				unique_id: "daikiti775",
 				nickname: "Daikiti",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/7353798309405786133~c5_300x300.jpeg?lk3s=45126217&nonce=49521&refresh_token=2d7d53fe7068c69ea9611d3941699e2b&x-expires=1723543200&x-signature=RCtepbZw%2BomsEKtRN%2BTaplyPUI4%3D&shp=45126217&shcp=-",
 			},
 			is_top: 0,
 		},
@@ -292,7 +299,7 @@ const Feed: FC = () => {
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3ab3292b58764c07aa20aa39516b5859_1717821785~tplv-tiktokx-360p.jpeg",
 			duration: 95,
-			play: "https://v16m-default.akamaized.net/ef4186c803e2cfd1bca0f8e25316518d/66b8dea6/video/tos/alisg/tos-alisg-pve-0037c001/oUaYQIfEGI8hzF0fAIeMANQ6aLehTaGRW7PGlY/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=3988&bt=1994&cs=0&ds=3&ft=XE5bCqT0m7jPD12TLL173wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=Ozs2NGY2aWQ0ZGdnNzQ2OkBpanlqbng5cjpmdDMzODczNEAzNjYtNjYvNjExY15iXmFfYSM0bjFzMmRzcGBgLS1kMTFzcw%3D%3D&vvpl=1&l=2024081109525226209811B948C9D3EAE5&btag=e00090000&shp=6da16bae&shcp=-",
+			play: "https://v16m-default.akamaized.net/a5f66d74ca0a0d000d724fdcd11c0c34/66babb4c/video/tos/alisg/tos-alisg-pve-0037c001/oUIqIIAzTLcSTiRRydBB9wQCotAfATgQwEXDii/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=4284&bt=2142&cs=0&ds=3&ft=XE5bCqT0m7jPD128in173wU8MYyKMeF~O5&mime_type=video_mp4&qs=0&rc=aDg6PDw0aTtoNDU6ZDtlNkBpamc0M2w5cjw3czMzODczNEAyL14zY18yXzQxNS4zLTBgYSNiMHJkMmRzZ2JgLS1kMS1zcw%3D%3D&vvpl=1&l=20240812194627CA581982D906232B69BA&btag=e00090000&shp=6da16bae&shcp=-",
 			wmplay:
 				"https://v16m-default.akamaized.net/d8a0098a8b4e41fbb520dbe65cf7867f/66b5ee0a/video/tos/alisg/tos-alisg-pve-0037c001/4b5oAIfBQIfCBaEAEBpOA4AcCU8uApnEFCIAfBJHgBgPQOQCAGIA/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&lr=all&cd=0%7C0%7C0%7C0&cv=1&br=2446&bt=1223&cs=0&ds=3&ft=XE5bCqT0m7jPD12lEb273wUPGIyKMeF~O5&mime_type=video_mp4&qs=0&rc=ZDk2OGQ4ZGhkNGZoNjpmN0BpM2o7PHQ5cnk1dDMzODczNEAzLmJmYTVgX2AxNi5gNGAuYSNqMWwtMmRzYzVgLS1kMWBzcw%3D%3D&vvpl=1&l=2024080820351135A5C32574DDFD0B1D7A&btag=e00088000",
 			music:
@@ -330,18 +337,44 @@ const Feed: FC = () => {
 				unique_id: "sabina",
 				nickname: "Sabina",
 				avatar:
-					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/ce53518c726d7998f7b4d392f42d89ea~c5_300x300.jpeg?lk3s=45126217&nonce=42641&refresh_token=2ccedb115211f91fd1efdc08b9eeba68&x-expires=1723453200&x-signature=jBv%2FCdZWvvFFT8zXO1EXPMBcNsY%3D&shp=45126217&shcp=-",
+					"https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/7353798309405786133~c5_300x300.jpeg?lk3s=45126217&nonce=49521&refresh_token=2d7d53fe7068c69ea9611d3941699e2b&x-expires=1723543200&x-signature=RCtepbZw%2BomsEKtRN%2BTaplyPUI4%3D&shp=45126217&shcp=-",
 			},
 		},
 	];
 
+	const [active, setActive] = useState(0);
+
+	const nextPage = () => {
+		console.log("nextPage");
+	};
+
 	return (
-		<section className="w-full h-full overflow-y-auto flex flex-col items-center ">
-			{feed.map((videoData) => (
-				<FeedItem key={videoData.aweme_id} videoData={videoData} />
-			))}
-		</section>
+		<>
+			<Helmet>
+				<title>{t("searchTitle", { keywords })}</title>
+			</Helmet>
+			<main className="h-full max-w-[800px] mx-auto p-4">
+				<InfiniteScroll
+					className="mt-4"
+					dataLength={videosData.length}
+					hasMore={false}
+					next={nextPage}
+					loader={<h4>Loading...</h4>}
+				>
+					<section className="w-full h-full overflow-y-auto flex flex-wrap gap-3">
+						{videosData.map((videoData, index) => (
+							<SearchVideoItem
+								key={videoData.aweme_id}
+								videoData={videoData}
+								playing={active === index}
+								onPlay={() => setActive(index)}
+							/>
+						))}
+					</section>
+				</InfiniteScroll>
+			</main>
+		</>
 	);
 };
 
-export default Feed;
+export default SearchPage;

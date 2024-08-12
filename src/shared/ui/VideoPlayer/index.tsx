@@ -54,7 +54,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 
 	return (
 		<div
-			className="relative rounded-2xl overflow-hidden cursor-pointer"
+			className="w-full h-full relative rounded-2xl overflow-hidden cursor-pointer"
 			onClick={handleClick}
 		>
 			<div className={`${onReady ? "opacity-100" : "opacity-0"}`}>

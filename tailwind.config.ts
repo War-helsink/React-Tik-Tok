@@ -7,10 +7,20 @@ const config: Config = {
 			gridTemplateColumns: {
 				"auto-fit-minmax": "repeat(auto-fit, minmax(220px, 1fr))",
 			},
+			width: {
+				"custom-width": "calc(33.3% - 12px)",
+			},
 		},
 		colors: {
 			background: {
-				shadow: "linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(12, 12, 12, 0.2) 100%);"
+				shadow:
+					"linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(12, 12, 12, 0.2) 100%)",
+				contrast: "var(--background-contrast)",
+			},
+			border: {
+				default:
+					"var(--ion-toolbar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, #c1c4cd)))) !important",
+				contrast: "var(--border-contrast)",
 			},
 			primary: {
 				default: "var(--ion-color-primary)",

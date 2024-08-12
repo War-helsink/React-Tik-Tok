@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 import { formatNumber } from "shared/helpers";
 
-import type { FeedActionContainerProps } from "../../model/props";
+import type { VideoActionContainerProps } from "../../model/props";
 
-const FeedActionContainer: FC<FeedActionContainerProps> = ({
+const VideoActionContainer: FC<VideoActionContainerProps> = ({
 	avatarUrl,
 	uniqueId,
 	diggCount,
@@ -58,4 +58,4 @@ const FeedActionContainer: FC<FeedActionContainerProps> = ({
 	);
 };
 
-export default FeedActionContainer;
+export default VideoActionContainer;

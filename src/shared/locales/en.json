@@ -6,6 +6,8 @@
 	"likes": "Likes",
 	"liked": "Liked",
 	"videos": "Videos",
+	"search": "Search",
+	"searchTitle": "Find «{{keywords}}» on TikTok | TikTok Search",
 
 	"userLiked": {
 		"title": "This user's liked videos are private",

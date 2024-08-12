@@ -6,6 +6,8 @@
 	"likes": "Лайки",
 	"liked": "Вподобано",
 	"videos": "Відео",
+	"search": "Пошук",
+	"searchTitle": "Знайди «{{keywords}}» в TikTok | Пошук TikTok",
 
 	"userLiked": {
 		"title": "Уподобані відео цього користувача приховано",
