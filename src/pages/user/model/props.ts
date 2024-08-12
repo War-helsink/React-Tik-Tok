@@ -1,5 +1,5 @@
 import type { UserData, User } from "entities/user";
-import type { VideoData } from "entities/user-videos";
+import type { VideoData } from "shared/interfaces";
 
 export interface UserProps {
 	user: User;
