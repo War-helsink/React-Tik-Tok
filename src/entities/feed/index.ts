@@ -1,6 +1,8 @@
 export * from "./model";
 
+export { useFeedList } from "./utils/hooks/useFeedList";
+
 export {
-	useGetFeedListQuery,
+	useGetFeedSearchQuery,
 	feedApi,
 } from "./api/api";

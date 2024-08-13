@@ -17,12 +17,7 @@ export interface UserTabsProps {
 	user: UserData;
 }
 
-export interface UserVideosProps {
-	hidden: boolean;
-}
-
 export interface UserLikedProps {
-	hidden: boolean;
 	uniqueId: string;
 }
 

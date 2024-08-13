@@ -20,13 +20,13 @@ export const LanguageContext = createContext<ILanguageContext | undefined>(
 
 export const useLanguage = () => {
 	const context = useContext(LanguageContext);
-  
+
 	if (!context) {
-	  throw new Error("context error");
+		throw new Error("context error");
 	}
-  
+
 	return context;
-  };
+};
 
 interface LanguageProviderProps {
 	children: ReactNode;
@@ -37,7 +37,15 @@ export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
 	const [language, setLanguage] = useState<string>(i18n.language);
 
 	useEffect(() => {
+		const language = localStorage.getItem("language");
+		if (language) {
+			setLanguage(language);
+		}
+	}, []);
+
+	useEffect(() => {
 		if (i18n.language !== language) {
+			localStorage.setItem("language", language);
 			i18n.changeLanguage(language);
 		}
 	}, [language, i18n]);

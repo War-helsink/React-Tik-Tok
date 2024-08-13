@@ -3,6 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type {
 	FeedListResponse,
 	FeedSearchResponse,
+	FeedSearchParams,
 	FeedParams,
 } from "../model";
 
@@ -32,7 +33,7 @@ export const feedApi = createApi({
 			},
 		}),
 
-		getFeedSearch: builder.query<FeedSearchResponse, FeedParams>({
+		getFeedSearch: builder.query<FeedSearchResponse, FeedSearchParams>({
 			query: (params) => {
 				const {
 					count = 10,
@@ -61,4 +62,4 @@ export const feedApi = createApi({
 	}),
 });
 
-export const { useGetFeedListQuery } = feedApi;
+export const { useGetFeedListQuery, useGetFeedSearchQuery } = feedApi;

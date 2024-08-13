@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import { Helmet } from "react-helmet-async";
 
+// import { useFeedList } from "entities/feed";
 import type { VideoData } from "shared/interfaces";
 import { Videos } from "widgets/video";
 
@@ -67,9 +68,9 @@ const FeedPage: FC = () => {
 			title:
 				"#グリーンスクリーン just chek in daily and get 5k yen #japan #tiktok #tiktoklite #tiktoklite換金 #sabinagendiaries #नगेन्द्र #foryoupage #fromjapan",
 			cover:
-				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/os4SJRQIEDAMnDx8e4Xgjr55fVBUnIAeMC8jB3~tplv-dmt-logoccm:300:400:tos-alisg-i-0068/oojEIYBmUAjAxhdib49ZmkA3AVBBBPixvAELi.jpeg",
+				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/os8fE4sAfBABKnAoqEi6DjNBWICAQChIICfbQi~c5_300x400.jpeg",
 			ai_dynamic_cover:
-				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/fcaecfc805d54ece9c763c70d07219a4_1717821786~tplv-dmt-logom:tos-alisg-i-0068/oojEIYBmUAjAxhdib49ZmkA3AVBBBPixvAELi.image",
+				"https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/5ae0838d41f242648dbe24146f9fcb42_1720723489?lk3s=d05b14bd&nonce=49913&refresh_token=4bb5342572eb16827c065d6e234a6963&x-expires=1723150800&x-signature=tGuyDU7P0Kyn%2F434EhD3QvWSv1M%3D&s=AWEME_DETAIL&se=false&sh=&sc=dynamic_cover&l=20240807213454994B5DE04EB7BA0B4649&shp=d05b14bd&shcp=-",
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3ab3292b58764c07aa20aa39516b5859_1717821785~tplv-tiktokx-360p.jpeg",
 			duration: 95,
@@ -176,9 +177,9 @@ const FeedPage: FC = () => {
 			title:
 				"#グリーンスクリーン just chek in daily and get 5k yen #japan #tiktok #tiktoklite #tiktoklite換金 #sabinagendiaries #नगेन्द्र #foryoupage #fromjapan",
 			cover:
-				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/os4SJRQIEDAMnDx8e4Xgjr55fVBUnIAeMC8jB3~tplv-dmt-logoccm:300:400:tos-alisg-i-0068/oojEIYBmUAjAxhdib49ZmkA3AVBBBPixvAELi.jpeg",
+				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/os8fE4sAfBABKnAoqEi6DjNBWICAQChIICfbQi~c5_300x400.jpeg",
 			ai_dynamic_cover:
-				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/fcaecfc805d54ece9c763c70d07219a4_1717821786~tplv-dmt-logom:tos-alisg-i-0068/oojEIYBmUAjAxhdib49ZmkA3AVBBBPixvAELi.image",
+				"https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/5ae0838d41f242648dbe24146f9fcb42_1720723489?lk3s=d05b14bd&nonce=49913&refresh_token=4bb5342572eb16827c065d6e234a6963&x-expires=1723150800&x-signature=tGuyDU7P0Kyn%2F434EhD3QvWSv1M%3D&s=AWEME_DETAIL&se=false&sh=&sc=dynamic_cover&l=20240807213454994B5DE04EB7BA0B4649&shp=d05b14bd&shcp=-",
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3ab3292b58764c07aa20aa39516b5859_1717821785~tplv-tiktokx-360p.jpeg",
 			duration: 95,
@@ -286,9 +287,9 @@ const FeedPage: FC = () => {
 			title:
 				"#グリーンスクリーン just chek in daily and get 5k yen #japan #tiktok #tiktoklite #tiktoklite換金 #sabinagendiaries #नगेन्द्र #foryoupage #fromjapan",
 			cover:
-				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/os4SJRQIEDAMnDx8e4Xgjr55fVBUnIAeMC8jB3~tplv-dmt-logoccm:300:400:tos-alisg-i-0068/oojEIYBmUAjAxhdib49ZmkA3AVBBBPixvAELi.jpeg",
+				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/os8fE4sAfBABKnAoqEi6DjNBWICAQChIICfbQi~c5_300x400.jpeg",
 			ai_dynamic_cover:
-				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/fcaecfc805d54ece9c763c70d07219a4_1717821786~tplv-dmt-logom:tos-alisg-i-0068/oojEIYBmUAjAxhdib49ZmkA3AVBBBPixvAELi.image",
+				"https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/5ae0838d41f242648dbe24146f9fcb42_1720723489?lk3s=d05b14bd&nonce=49913&refresh_token=4bb5342572eb16827c065d6e234a6963&x-expires=1723150800&x-signature=tGuyDU7P0Kyn%2F434EhD3QvWSv1M%3D&s=AWEME_DETAIL&se=false&sh=&sc=dynamic_cover&l=20240807213454994B5DE04EB7BA0B4649&shp=d05b14bd&shcp=-",
 			origin_cover:
 				"https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3ab3292b58764c07aa20aa39516b5859_1717821785~tplv-tiktokx-360p.jpeg",
 			duration: 95,
@@ -335,13 +336,17 @@ const FeedPage: FC = () => {
 		},
 	];
 
+	// const { data: videosData, isLoading } = useFeedList();
+
+	// console.log(videosData, isLoading);
+
 	return (
 		<>
 			<Helmet>
 				<title>Tik Tok</title>
 			</Helmet>
 			<main className="w-full h-full">
-				<Videos videosData={videosData} />
+				<Videos isLoading videosData={videosData} />
 			</main>
 		</>
 	);

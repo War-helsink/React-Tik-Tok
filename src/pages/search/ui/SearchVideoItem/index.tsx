@@ -27,7 +27,7 @@ const SearchVideoItem: FC<SearchVideoItemProps> = ({
 			<div className="relative w-full">
 				<div className="pt-[135%]">
 					<Link
-						to={`/video/${videoData.video_id}`}
+						to={`/${videoData.author.unique_id}/video/${videoData.video_id}`}
 						onMouseOver={handleMouseOver}
 						className="absolute top-0 left-0 w-full h-full"
 					>

@@ -1,9 +1,8 @@
 import { type FC, useState } from "react";
-
-// import { useGetListQuery } from "entities/tik-tok";
-import VideoItem from "../VideoItem";
+import { withSkeleton } from "shared/hoc";
 
 import type { VideosProps } from "../../model/props";
+import VideoItem from "../VideoItem";
 
 const Videos: FC<VideosProps> = ({ videosData }) => {
 	const [playing, setPlaying] = useState<number>(0);
@@ -47,4 +46,4 @@ const Videos: FC<VideosProps> = ({ videosData }) => {
 	);
 };
 
-export default Videos;
+export default withSkeleton(Videos, 10);

@@ -17,5 +17,13 @@
 	"userVideos": {
 		"noVideos": "This user has no videos.",
 		"hidden": "Videos are currently hidden."
+	},
+
+	"error": {
+		"title": "Not Found!",
+		"oops": "Oops!",
+		"description": "Sorry, an unexpected error has occurred.",
+		"notFound": "Not Found",
+		"mainPage": "On the main page"
 	}
 }

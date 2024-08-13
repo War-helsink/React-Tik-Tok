@@ -1,3 +1,6 @@
+export type SkeletonType = "item" | "itemV2";
+export type DirectionType = "grid" | "row" | "column";
+
 export interface Response {
 	code: number;
 	msg: string;

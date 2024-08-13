@@ -1,6 +1,10 @@
 import type { Response, VideoData } from "shared/interfaces";
 
 export interface FeedParams {
+	count?: number;
+}
+
+export interface FeedSearchParams {
 	cursor?: number;
 	count?: number;
 	keywords: string;

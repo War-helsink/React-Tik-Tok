@@ -1,0 +1,1 @@
+export { withSkeleton } from "./withSkeleton";

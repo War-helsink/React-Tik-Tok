@@ -21,7 +21,7 @@ const UserVideo: FC<UserVideoProps> = ({
 	return (
 		<div className="w-full h-full min-h-96 flex flex-col gap-1">
 			<Link
-				to={`/video/${videoData.video_id}`}
+				to={`/${videoData.author.unique_id}/video/${videoData.video_id}`}
 				className="relative w-full h-full"
 				onMouseOver={handleMouseOver}
 			>
@@ -37,7 +37,7 @@ const UserVideo: FC<UserVideoProps> = ({
 					<span>{formatNumber(videoData.play_count)}</span>
 				</div>
 			</Link>
-			<Link to={`/video/${videoData.video_id}`}>
+			<Link to={`/${videoData.author.unique_id}/video/${videoData.video_id}`}>
 				<div className="w-full truncate">{videoData.title}</div>
 			</Link>
 		</div>

@@ -5,12 +5,12 @@ import { lockClosedOutline } from "ionicons/icons";
 
 import type { UserLikedProps } from "../../model/props";
 
-const UserLiked: FC<UserLikedProps> = ({ hidden, uniqueId }) => {
+const UserLiked: FC<UserLikedProps> = ({ uniqueId }) => {
 	const { t } = useTranslation();
 
 	return (
 		<div
-			className={`${hidden ? "hidden" : "flex"} flex-col justify-center items-center flex-grow w-full p-5`}
+			className="flex flex-col justify-center items-center flex-grow w-full p-5"
 		>
 			<h1 className="text-6xl">
 				<IonIcon icon={lockClosedOutline} />

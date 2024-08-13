@@ -59,8 +59,8 @@ const UserTabs: FC<UserTabsProps> = ({ user }) => {
 					</div>
 				) : (
 					<>
-						<UserVideos hidden={segment !== "video"} />
-						<UserLiked hidden={segment !== "liked"} uniqueId={user.uniqueId} />
+						{segment !== "video" && <UserVideos />}
+						{segment !== "liked" && <UserLiked uniqueId={user.uniqueId} />}
 					</>
 				)}
 			</div>

@@ -1,11 +1,10 @@
-import { type FC, useState } from "react";
+import type { FC } from "react";
 import { Helmet } from "react-helmet-async";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 import type { VideoData } from "shared/interfaces";
-import SearchVideoItem from "./SearchVideoItem";
+import SearchVideos from "./SearchVideos";
 
 const SearchPage: FC = () => {
 	const [searchParams] = useSearchParams();
@@ -342,36 +341,13 @@ const SearchPage: FC = () => {
 		},
 	];
 
-	const [active, setActive] = useState(0);
-
-	const nextPage = () => {
-		console.log("nextPage");
-	};
-
 	return (
 		<>
 			<Helmet>
 				<title>{t("searchTitle", { keywords })}</title>
 			</Helmet>
 			<main className="h-full max-w-[800px] mx-auto p-4">
-				<InfiniteScroll
-					className="mt-4"
-					dataLength={videosData.length}
-					hasMore={false}
-					next={nextPage}
-					loader={<h4>Loading...</h4>}
-				>
-					<section className="w-full h-full overflow-y-auto flex flex-wrap gap-3">
-						{videosData.map((videoData, index) => (
-							<SearchVideoItem
-								key={videoData.aweme_id}
-								videoData={videoData}
-								playing={active === index}
-								onPlay={() => setActive(index)}
-							/>
-						))}
-					</section>
-				</InfiniteScroll>
+				<SearchVideos isLoading={false} videosData={videosData} />
 			</main>
 		</>
 	);

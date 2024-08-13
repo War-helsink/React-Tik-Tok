@@ -3,11 +3,10 @@ import { useTranslation } from "react-i18next";
 import { IonText } from "@ionic/react";
 
 import type { UserVideosData } from "entities/user-videos";
-import type { UserVideosProps } from "../../model/props";
 
 import UserVideo from "../UserVideo";
 
-const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
+const UserVideos: FC = () => {
 	const { t } = useTranslation();
 
 	const dataVideo: UserVideosData = {
@@ -357,7 +356,7 @@ const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
 
 	return dataVideo.videos.length ? (
 		<div
-			className={`${hidden ? "hidden" : "grid"} min-h-full  grid-cols-auto-fit-minmax w-full gap-x-4 gap-y-6`}
+			className="grid min-h-full grid-cols-auto-fit-minmax w-full gap-x-4 gap-y-6"
 		>
 			{dataVideo.videos.map((videoData, index) => (
 				<UserVideo
@@ -370,7 +369,7 @@ const UserVideos: FC<UserVideosProps> = ({ hidden }) => {
 		</div>
 	) : (
 		<div
-			className={`${hidden ? "hidden" : "flex"} w-full h-full flex-col justify-center items-center flex-grow p-5`}
+			className="flex w-full h-full flex-col justify-center items-center flex-grow p-5"
 		>
 			<IonText className="text-3xl">{t("userVideos.noVideos")}</IonText>
 			<p className="opacity-50">{t("userVideos.hidden")}</p>
