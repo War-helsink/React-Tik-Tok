@@ -6,7 +6,7 @@ import { withSkeleton } from "shared/hoc";
 import type { SearchVideosProps } from "../../model/props";
 import SearchVideoItem from "../SearchVideoItem";
 
-const SearchVideos: FC<SearchVideosProps> = ({ videosData }) => {
+const SearchVideos: FC<SearchVideosProps> = ({ videosData, hasMore }) => {
 	const [active, setActive] = useState(0);
 
 	const nextPage = () => {
@@ -18,14 +18,14 @@ const SearchVideos: FC<SearchVideosProps> = ({ videosData }) => {
 			<InfiniteScroll
 				className="mt-4"
 				dataLength={videosData.length}
-				hasMore={false}
+				hasMore={hasMore}
 				next={nextPage}
 				loader={<h4>Loading...</h4>}
 			>
 				<section className="w-full h-full overflow-y-auto flex flex-wrap gap-3">
 					{videosData.map((videoData, index) => (
 						<SearchVideoItem
-							key={videoData.aweme_id}
+							key={videoData.video_id}
 							videoData={videoData}
 							playing={active === index}
 							onPlay={() => setActive(index)}

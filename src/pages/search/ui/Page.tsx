@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import type { VideoData } from "shared/interfaces";
+// import { useFeedSearch } from "entities/feed";
 import SearchVideos from "./SearchVideos";
 
 const SearchPage: FC = () => {
@@ -11,7 +11,9 @@ const SearchPage: FC = () => {
 	const keywords = searchParams.get("q");
 	const { t } = useTranslation();
 
-	const videosData: VideoData[] = [
+	// const { data: videosData, isLoading, hasMore} = useFeedSearch(keywords);
+
+	const videosData = [
 		{
 			aweme_id: "v1c044g50000cq82fvvog65q09345284gm0",
 			video_id: "7390451064438377735",
@@ -347,7 +349,7 @@ const SearchPage: FC = () => {
 				<title>{t("searchTitle", { keywords })}</title>
 			</Helmet>
 			<main className="h-full max-w-[800px] mx-auto p-4">
-				<SearchVideos isLoading={false} videosData={videosData} />
+				<SearchVideos isLoading={false} videosData={videosData} hasMore={true} />
 			</main>
 		</>
 	);

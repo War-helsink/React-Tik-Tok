@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import type { UserResponse, UserParams } from "../model";
+import type {
+	UserResponse,
+	UserVideosResponse,
+	UserParams,
+	UserVideosParams,
+} from "../model";
 
 const RAPIDAPI_HOST = import.meta.env.VITE_RAPIDAPI_HOST;
 const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
@@ -25,7 +30,26 @@ export const userApi = createApi({
 				};
 			},
 		}),
+
+		getUserVideos: builder.query<UserVideosResponse, UserVideosParams>({
+			query: (params) => {
+				const { uniqueId, userId, count = 10, cursor = 0 } = params || {};
+				return {
+					url: "/user/posts",
+					params: {
+						unique_id: uniqueId,
+						user_id: userId,
+						cursor: cursor,
+						count: count,
+					},
+					headers: {
+						"x-rapidapi-key": RAPIDAPI_KEY,
+						"x-rapidapi-host": RAPIDAPI_HOST,
+					},
+				};
+			},
+		}),
 	}),
 });
 
-export const { useGetUserQuery } = userApi;
+export const { useGetUserQuery, useGetUserVideosQuery } = userApi;

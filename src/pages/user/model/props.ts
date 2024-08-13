@@ -1,9 +1,5 @@
-import type { UserData, User } from "entities/user";
+import type { UserData } from "entities/user";
 import type { VideoData } from "shared/interfaces";
-
-export interface UserProps {
-	user: User;
-}
 
 export interface UserInfoProps {
 	user: UserData;
@@ -15,10 +11,15 @@ export interface UserInfoProps {
 
 export interface UserTabsProps {
 	user: UserData;
+	videosData: VideoData[];
 }
 
 export interface UserLikedProps {
 	uniqueId: string;
+}
+
+export interface UserVideosProps {
+	videosData: VideoData[];
 }
 
 export interface UserVideoProps {

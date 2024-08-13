@@ -1,14 +1,32 @@
-import type { Response } from "shared/interfaces";
+import type { Response, VideoData } from "shared/interfaces";
 
 export interface UserParams {
 	uniqueId: string;
 }
 
-export interface UserResponse extends Response {
-	data: User;
+export interface UserVideosParams {
+	uniqueId: string;
+	userId?: string;
+	count?: number;
+	cursor?: number;
 }
 
-export interface User {
+export interface UserResponse extends Response {
+	data: UserInfo;
+}
+
+export interface UserVideosResponse extends Response {
+	data: UserVideosData;
+}
+
+export interface UserVideosData {
+	videos: VideoData[];
+	cursor: number;
+	hasMore: boolean;
+}
+
+
+export interface UserInfo {
 	user: UserData;
 	stats: UserStats;
 }

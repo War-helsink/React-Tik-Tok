@@ -1,3 +1,5 @@
 export * from "./model";
 
-export { useGetUserQuery, userApi } from "./api/api";
+export { useUser } from "./utils/hooks/useUser";
+export { useVideos } from "./utils/hooks/useVideos";
+export { userApi } from "./api/api";

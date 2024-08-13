@@ -2,11 +2,12 @@ import type { FC } from "react";
 import { Helmet } from "react-helmet-async";
 
 // import { useFeedList } from "entities/feed";
-import type { VideoData } from "shared/interfaces";
 import { Videos } from "widgets/video";
 
 const FeedPage: FC = () => {
-	const videosData: VideoData[] = [
+	// const { data: videosData, isLoading } = useFeedList();
+
+	const videosData = [
 		{
 			aweme_id: "v1c044g50000cq82fvvog65q09345284gm0",
 			video_id: "7390451064438377735",
@@ -336,17 +337,13 @@ const FeedPage: FC = () => {
 		},
 	];
 
-	// const { data: videosData, isLoading } = useFeedList();
-
-	// console.log(videosData, isLoading);
-
 	return (
 		<>
 			<Helmet>
 				<title>Tik Tok</title>
 			</Helmet>
 			<main className="w-full h-full">
-				<Videos isLoading videosData={videosData} />
+				<Videos isLoading={false} videosData={videosData} />
 			</main>
 		</>
 	);

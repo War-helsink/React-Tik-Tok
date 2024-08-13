@@ -19,7 +19,7 @@ import styles from "./styles.module.scss";
 import UserLiked from "../UserLiked";
 import UserVideos from "../UserVideos";
 
-const UserTabs: FC<UserTabsProps> = ({ user }) => {
+const UserTabs: FC<UserTabsProps> = ({ user, videosData }) => {
 	const [segment, setSegment] = useState("video");
 	const { t } = useTranslation();
 
@@ -59,8 +59,8 @@ const UserTabs: FC<UserTabsProps> = ({ user }) => {
 					</div>
 				) : (
 					<>
-						{segment !== "video" && <UserVideos />}
-						{segment !== "liked" && <UserLiked uniqueId={user.uniqueId} />}
+						{segment === "video" && <UserVideos videosData={videosData} />}
+						{segment === "liked" && <UserLiked uniqueId={user.uniqueId} />}
 					</>
 				)}
 			</div>
