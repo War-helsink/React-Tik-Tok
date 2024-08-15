@@ -405,7 +405,7 @@ const UserPage: FC = () => {
 								heartCount={user.stats.heartCount}
 								videoCount={user.stats.videoCount}
 							/>
-							<UserTabs user={user.user} videosData={videosData} />
+							<UserTabs user={user.user} videosData={videosData} isLoading={false} />
 						</>
 					) : null}
 				</section>

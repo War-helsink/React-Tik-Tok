@@ -32,7 +32,7 @@ const UserVideo: FC<UserVideoProps> = ({
 					url={videoData.play}
 					volume={0}
 				/>
-				<div className="absolute bottom-0 left-0 w-full px-3 pb-4 flex items-center gap-1">
+				<div className="absolute bottom-0 left-0 w-full px-3 pb-4 flex items-center gap-1 text-tik-tok-default">
 					<IonIcon className="text-xl" icon={playOutline} />
 					<span>{formatNumber(videoData.play_count)}</span>
 				</div>

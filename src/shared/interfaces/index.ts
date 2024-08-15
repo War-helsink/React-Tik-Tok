@@ -1,4 +1,6 @@
-export type SkeletonType = "item" | "itemV2";
+export { type Volume, createVolume, isVolumeInRange} from "./volume";
+
+export type SkeletonType = "item" | "itemV2" | "itemV3";
 export type DirectionType = "grid" | "row" | "column";
 
 export interface Response {

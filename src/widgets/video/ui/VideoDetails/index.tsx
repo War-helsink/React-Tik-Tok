@@ -1,7 +1,6 @@
 import { type FC, useMemo } from "react";
-import {
-	IonIcon,
-} from "@ionic/react";
+import { useVolume } from "app/providers/VolumeContext";
+import { IonIcon } from "@ionic/react";
 import { musicalNotes } from "ionicons/icons";
 
 import { Link } from "react-router-dom";
@@ -14,6 +13,7 @@ const VideoDetails: FC<VideoDetailsProps> = ({
 	videoData,
 	playing = false,
 }) => {
+	const { volume, setVolume } = useVolume();
 	const titleWords = useMemo<string[]>(() => {
 		return videoData.title.trim().split(" ");
 	}, [videoData]);
@@ -26,6 +26,8 @@ const VideoDetails: FC<VideoDetailsProps> = ({
 				playing={playing}
 				progressInterval={500}
 				url={url}
+				volume={volume}
+				setVolume={setVolume}
 			/>
 
 			<div className="absolute bottom-0 left-0 pb-2 w-full px-3 z-10 text-tik-tok-default">
@@ -37,12 +39,12 @@ const VideoDetails: FC<VideoDetailsProps> = ({
 				</Link>
 
 				<p className="truncate">
-					{titleWords.map((word) => {
+					{titleWords.map((word, index) => {
 						if (word.includes("#")) {
 							return (
 								<Link
 									to={`/tag/${word.replace("#", "")}`}
-									key={word}
+									key={`key_${index}_${word.replace("#", "")}`}
 									className="hover:underline"
 								>
 									{`${word} `}

@@ -29,22 +29,19 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-	const [isDark, setIsDark] = useState(false);
+	const [isDark, setIsDark] = useState<boolean>(() => {
+		const theme = localStorage.getItem("theme");
+		if (theme) {
+			return JSON.parse(theme) as boolean;
+		}
+		const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+		return prefersDark.matches;
+	});
 
 	const toggleTheme = () => {
 		localStorage.setItem("theme", JSON.stringify(!isDark));
 		setIsDark((prev) => !prev);
 	};
-
-	useEffect(() => {
-		const theme = localStorage.getItem("theme");
-		if (theme) {
-			setIsDark(JSON.parse(theme) as boolean);
-		} else {
-			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-			setIsDark(prefersDark.matches);
-		}
-	}, []);
 
 	useEffect(() => {
 		document.documentElement.classList.toggle("ion-palette-dark", isDark);

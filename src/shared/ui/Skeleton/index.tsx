@@ -26,7 +26,7 @@ const Skeleton: FC<SkeletonProps> = ({
 						<div className="flex flex-col items-center">
 							<IonSkeletonText
 								animated
-								className="m-0 size-12 rounded-full my-1"
+								className="m-0 size-12 rounded-full mb-5"
 							/>
 							<IonSkeletonText
 								animated
@@ -64,6 +64,15 @@ const Skeleton: FC<SkeletonProps> = ({
 							</div>
 						</div>
 					</div>
+				))}
+
+			{type === "itemV3" &&
+				[...Array(count)].map((_, index) => (
+					<IonSkeletonText
+						key={`skeleton_itemV2_${index}`}
+						class="m-0 pt-[135%] rounded-2xl"
+						animated
+					/>
 				))}
 		</section>
 	);

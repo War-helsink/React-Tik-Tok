@@ -1,4 +1,5 @@
-import { type FC, useState } from "react";
+import { type FC, type UIEvent, useState } from "react";
+import { useDebounce } from "shared/hooks";
 import { withSkeleton } from "shared/hoc";
 
 import type { VideosProps } from "../../model/props";
@@ -7,7 +8,7 @@ import VideoItem from "../VideoItem";
 const Videos: FC<VideosProps> = ({ videosData }) => {
 	const [playing, setPlaying] = useState<number>(0);
 
-	const handleScroll = (ev: any) => {
+	const handleScroll = useDebounce((ev: UIEvent<HTMLDivElement>) => {
 		const container = ev.target as HTMLElement;
 		if (!container) return;
 
@@ -28,7 +29,7 @@ const Videos: FC<VideosProps> = ({ videosData }) => {
 				break;
 			}
 		}
-	};
+	}, 500);
 
 	return (
 		<section

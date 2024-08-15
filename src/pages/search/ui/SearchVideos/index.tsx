@@ -1,39 +1,48 @@
-import { type FC, useState } from "react";
+import { type FC, useState, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+
+import Loader from "shared/ui/Loader";
+import NotLoader from "shared/ui/NotLoader";
 
 import { withSkeleton } from "shared/hoc";
 
 import type { SearchVideosProps } from "../../model/props";
 import SearchVideoItem from "../SearchVideoItem";
 
-const SearchVideos: FC<SearchVideosProps> = ({ videosData, hasMore }) => {
+const SearchVideos: FC<SearchVideosProps> = ({
+	videosData,
+	hasMore,
+	loadNextPage,
+}) => {
+	const scrollableRef = useRef<HTMLDivElement | null>(null);
 	const [active, setActive] = useState(0);
 
-	const nextPage = () => {
-		console.log("nextPage");
-	};
-
 	return (
-		<>
+		<section
+			id="scrollableDiv"
+			className="h-full w-full overflow-y-auto"
+			ref={scrollableRef}
+		>
 			<InfiniteScroll
-				className="mt-4"
+				className="flex flex-wrap gap-3"
+				style={{ overflow: "hidden" }}
 				dataLength={videosData.length}
 				hasMore={hasMore}
-				next={nextPage}
-				loader={<h4>Loading...</h4>}
+				next={loadNextPage}
+				loader={<Loader />}
+				endMessage={<NotLoader />}
+				scrollableTarget="scrollableDiv"
 			>
-				<section className="w-full h-full overflow-y-auto flex flex-wrap gap-3">
-					{videosData.map((videoData, index) => (
-						<SearchVideoItem
-							key={videoData.video_id}
-							videoData={videoData}
-							playing={active === index}
-							onPlay={() => setActive(index)}
-						/>
-					))}
-				</section>
+				{videosData.map((videoData, index) => (
+					<SearchVideoItem
+						key={videoData.video_id}
+						videoData={videoData}
+						playing={active === index}
+						onPlay={() => setActive(index)}
+					/>
+				))}
 			</InfiniteScroll>
-		</>
+		</section>
 	);
 };
 

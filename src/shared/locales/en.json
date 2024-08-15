@@ -25,5 +25,7 @@
 		"description": "Sorry, an unexpected error has occurred.",
 		"notFound": "Not Found",
 		"mainPage": "On the main page"
-	}
+	},
+
+	"noMoreData": "No more data to load."
 }

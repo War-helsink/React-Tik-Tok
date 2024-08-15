@@ -34,14 +34,14 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
 	const { i18n } = useTranslation();
-	const [language, setLanguage] = useState<string>(i18n.language);
-
-	useEffect(() => {
+	const [language, setLanguage] = useState<string>(() => {
 		const language = localStorage.getItem("language");
 		if (language) {
-			setLanguage(language);
+			return language;
 		}
-	}, []);
+
+		return i18n.language;
+	});
 
 	useEffect(() => {
 		if (i18n.language !== language) {

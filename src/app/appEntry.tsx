@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { IonApp } from "@ionic/react";
 
 import { ThemeProvider } from "./providers/ThemeContext";
+import { VolumeProvider } from "./providers/VolumeContext";
 import { LanguageProvider } from "./providers/LanguageContext";
 import { store } from "./appStore";
 
@@ -26,13 +27,15 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<StrictMode>
 		<IonApp>
 			<LanguageProvider>
-				<ThemeProvider>
-					<Provider store={store}>
-						<HelmetProvider>
-							<RouterProvider router={appRouter} />
-						</HelmetProvider>
-					</Provider>
-				</ThemeProvider>
+				<VolumeProvider>
+					<ThemeProvider>
+						<Provider store={store}>
+							<HelmetProvider>
+								<RouterProvider router={appRouter} />
+							</HelmetProvider>
+						</Provider>
+					</ThemeProvider>
+				</VolumeProvider>
 			</LanguageProvider>
 		</IonApp>
 	</StrictMode>,

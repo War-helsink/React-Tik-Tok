@@ -1,6 +1,12 @@
 import { type FC, useMemo } from "react";
 import { IonAvatar, IonIcon, IonButton } from "@ionic/react";
-import { heart, bookmark, arrowRedo, chatbubbleEllipses } from "ionicons/icons";
+import {
+	add,
+	heart,
+	bookmark,
+	arrowRedo,
+	chatbubbleEllipses,
+} from "ionicons/icons";
 
 import { Link } from "react-router-dom";
 
@@ -40,11 +46,16 @@ const VideoActionContainer: FC<VideoActionContainerProps> = ({
 
 	return (
 		<div className="p-5 flex flex-col items-center absolute bottom-0 right-0 z-10 md:relative md:p-0">
-			<Link to={`/user/${uniqueId}`}>
-				<IonAvatar className="size-12">
-					<img alt="Silhouette of a person's head" src={avatarUrl} />
-				</IonAvatar>
-			</Link>
+			<div className="relative mb-5">
+				<Link to={`/user/${uniqueId}`}>
+					<IonAvatar className="size-12">
+						<img alt="Silhouette of a person's head" src={avatarUrl} />
+					</IonAvatar>
+				</Link>
+				<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 size-6 bg-tik-tok-button-default rounded-full flex items-center justify-center cursor-pointer">
+					<IonIcon slot="icon-only" icon={add} />
+				</div>
+			</div>
 
 			{details.map((detail) => (
 				<div key={detail.count} className="flex flex-col items-center">

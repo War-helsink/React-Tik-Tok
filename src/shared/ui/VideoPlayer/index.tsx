@@ -1,18 +1,12 @@
-import { type FC, useState, useRef, useEffect } from "react";
+import { type FC, useState, useRef, useEffect, useCallback } from "react";
 import ReactPlayer from "react-player";
 import type { OnProgressProps } from "react-player/base";
-import { play, pause, volumeMediumOutline} from "ionicons/icons";
 
-import {
-	IonIcon,
-	IonButton,
-	IonButtons,
-	IonProgressBar,
-	IonSkeletonText,
-} from "@ionic/react";
+import { IonSkeletonText } from "@ionic/react";
+
+import Control from "../Control";
 
 import type { VideoPlayerProps } from "../../model/props";
-import styles from "./styles.module.scss";
 
 const VideoPlayer: FC<VideoPlayerProps> = ({
 	url,
@@ -20,8 +14,10 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 	playing = false,
 	loop = false,
 	progressInterval = 1000,
-	volume = 1,
+	volume,
 	controls = false,
+	rounded = true,
+	setVolume,
 }) => {
 	const progressRef = useRef<HTMLIonProgressBarElement>(null);
 	const [onReady, setOnReady] = useState(false);
@@ -36,13 +32,13 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 		setOnReady(true);
 	};
 
-	const handleClick = () => {
+	const handleTogglePlayPause = useCallback(() => {
 		setIsPlaying((prev) => !prev);
-	};
+	}, []);
 
-	const handleProgress = (state: OnProgressProps) => {
+	const handleProgress = useCallback((state: OnProgressProps) => {
 		if (progressRef.current) progressRef.current.value = state.played;
-	};
+	}, []);
 
 	const handlePlay = () => {
 		if (!isPlaying) setIsPlaying(true);
@@ -52,12 +48,18 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 		if (isPlaying) setIsPlaying(false);
 	};
 
+	const handleChangeVolume = useCallback(
+		(value: number) => {
+			if (setVolume) setVolume(value);
+		},
+		[setVolume],
+	);
+
 	return (
 		<div
-			className="w-full h-full relative rounded-2xl overflow-hidden cursor-pointer"
-			onClick={handleClick}
+			className={`w-full h-full relative ${rounded ? "rounded-2xl" : ""} overflow-hidden cursor-pointer group`}
 		>
-			<div className={`${onReady ? "opacity-100" : "opacity-0"}`}>
+			<div className={`w-full h-full ${onReady ? "opacity-100" : "opacity-0"}`}>
 				<ReactPlayer
 					className={`${className}`}
 					loop={loop}
@@ -78,30 +80,15 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 				className={`${onReady ? "hidden" : "block"} absolute top-0 left-0 w-full h-full m-0 -z-10`}
 			/>
 
-			{controls ? (
-				<div className="absolute w-full h-full inset-0 z-10 group">
-					<div className="relative w-full h-full p-1">
-						<div className={`transition-opacity duration-300 opacity-0 group-hover:opacity-100 absolute top-0 left-0 w-full ${styles["bg-background-shadow"]}`}>
-							<IonButtons>
-								<IonButton shape="round" color="tik-tok">
-									<IonIcon slot="icon-only" icon={volumeMediumOutline} />
-								</IonButton>
-							</IonButtons>
-						</div>
-						<div className="transition-opacity duration-300 opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-							<IonButtons>
-								<IonButton shape="round" color="tik-tok">
-									<IonIcon slot="icon-only" icon={isPlaying ? pause : play} />
-								</IonButton>
-							</IonButtons>
-						</div>
-
-						<div className="absolute w-full bottom-0 left-0">
-							<IonProgressBar ref={progressRef} color="tik-tok-button" />
-						</div>
-					</div>
-				</div>
-			) : null}
+			{controls && (
+				<Control
+					ref={progressRef}
+					isPlaying={isPlaying}
+					volume={volume}
+					onTogglePlayPause={handleTogglePlayPause}
+					onChangeVolume={handleChangeVolume}
+				/>
+			)}
 		</div>
 	);
 };

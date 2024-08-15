@@ -12,7 +12,7 @@
 	"dependencies": {
 		"@ionic/react": "^8.2.6",
 		"@reduxjs/toolkit": "^2.2.7",
-		"framer-motion": "^11.3.24",
+		"framer-motion": "^11.3.26",
 		"i18next": "^23.12.2",
 		"ionicons": "^7.4.0",
 		"postcss": "^8.4.41",

@@ -44,12 +44,12 @@ const SearchVideoItem: FC<SearchVideoItemProps> = ({
 
 			<div className="px-2 pt-2 pb-6">
 				<div className="w-full truncate mt-1">
-					{titleWords.map((word) => {
+					{titleWords.map((word, index) => {
 						if (word.includes("#")) {
 							return (
 								<Link
 									to={`/tag/${word.replace("#", "")}`}
-									key={word}
+									key={`key_${index}_${word.replace("#", "")}`}
 									className="hover:underline text-primary-default"
 								>
 									{`${word} `}

@@ -2,6 +2,8 @@ import { type FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IonText } from "@ionic/react";
 
+import { withSkeleton } from "shared/hoc";
+
 import type { UserVideosProps } from "../../model/props";
 import UserVideo from "../UserVideo";
 
@@ -28,4 +30,4 @@ const UserVideos: FC<UserVideosProps> = ({ videosData }) => {
 	);
 };
 
-export default UserVideos;
+export default withSkeleton(UserVideos, 12, "itemV3", "grid");

@@ -10,6 +10,7 @@ export interface UserInfoProps {
 }
 
 export interface UserTabsProps {
+	isLoading?: boolean;
 	user: UserData;
 	videosData: VideoData[];
 }

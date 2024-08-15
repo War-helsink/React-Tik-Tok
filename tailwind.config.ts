@@ -13,9 +13,8 @@ const config: Config = {
 		},
 		colors: {
 			background: {
-				shadow:
-					"linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(12, 12, 12, 0.2) 100%)",
 				contrast: "var(--background-contrast)",
+
 			},
 			border: {
 				default:
@@ -102,6 +101,12 @@ const config: Config = {
 				contrast: "var(--ion-color-tik-tok-contrast)",
 				shade: "var(--ion-color-tik-tok-shade)",
 				tint: "var(--ion-color-tik-tok-tint)",
+			},
+			"tik-tok-button": {
+				default: "var(--ion-color-tik-tok-button)",
+				contrast: "var(--ion-color-tik-tok-button-contrast)",
+				shade: "var(--ion-color-tik-tok-button-shade)",
+				tint: "var(--ion-color-tik-tok-button-tint)",
 			},
 		},
 	},
