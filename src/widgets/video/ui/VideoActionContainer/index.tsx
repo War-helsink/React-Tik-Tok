@@ -1,4 +1,4 @@
-import { type FC, useMemo } from "react";
+import type { FC } from "react";
 import { IonAvatar, IonIcon, IonButton } from "@ionic/react";
 import {
 	add,
@@ -22,27 +22,24 @@ const VideoActionContainer: FC<VideoActionContainerProps> = ({
 	downloadCount,
 	shareCount,
 }) => {
-	const details = useMemo(
-		() => [
-			{
-				icon: heart,
-				count: diggCount,
-			},
-			{
-				icon: chatbubbleEllipses,
-				count: commentCount,
-			},
-			{
-				icon: bookmark,
-				count: downloadCount,
-			},
-			{
-				icon: arrowRedo,
-				count: shareCount,
-			},
-		],
-		[diggCount, commentCount, downloadCount, shareCount],
-	);
+	const details = [
+		{
+			icon: heart,
+			count: diggCount,
+		},
+		{
+			icon: chatbubbleEllipses,
+			count: commentCount,
+		},
+		{
+			icon: bookmark,
+			count: downloadCount,
+		},
+		{
+			icon: arrowRedo,
+			count: shareCount,
+		},
+	];
 
 	return (
 		<div className="p-5 flex flex-col items-center absolute bottom-0 right-0 z-10 md:relative md:p-0">

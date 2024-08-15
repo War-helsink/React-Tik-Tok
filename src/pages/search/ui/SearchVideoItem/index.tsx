@@ -1,4 +1,4 @@
-import { type FC, useMemo } from "react";
+import type { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { IonIcon, IonAvatar } from "@ionic/react";
@@ -14,9 +14,7 @@ const SearchVideoItem: FC<SearchVideoItemProps> = ({
 	playing = false,
 	onPlay,
 }) => {
-	const titleWords = useMemo<string[]>(() => {
-		return videoData.title.trim().split(" ");
-	}, [videoData]);
+	const titleWords = videoData.title.trim().split(" ");
 
 	const handleMouseOver = () => {
 		onPlay();

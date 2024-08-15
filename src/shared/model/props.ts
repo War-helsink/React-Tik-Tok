@@ -1,4 +1,3 @@
-import type { Dispatch, SetStateAction } from "react";
 import type { SkeletonType, DirectionType } from "shared/interfaces";
 
 export interface VolumeControlProps {
@@ -26,7 +25,7 @@ export interface VideoPlayerProps {
 	playing?: boolean;
 	loop?: boolean;
 	progressInterval?: number;
-	setVolume?: Dispatch<SetStateAction<number>>;
+	setVolume?: (value: number)=> void;
 }
 
 export interface SkeletonProps {

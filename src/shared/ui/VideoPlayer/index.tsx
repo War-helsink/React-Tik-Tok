@@ -1,4 +1,4 @@
-import { type FC, useState, useRef, useEffect, useCallback } from "react";
+import { type FC, useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
 import type { OnProgressProps } from "react-player/base";
 
@@ -32,13 +32,13 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 		setOnReady(true);
 	};
 
-	const handleTogglePlayPause = useCallback(() => {
+	const handleTogglePlayPause = () => {
 		setIsPlaying((prev) => !prev);
-	}, []);
+	};
 
-	const handleProgress = useCallback((state: OnProgressProps) => {
+	const handleProgress = (state: OnProgressProps) => {
 		if (progressRef.current) progressRef.current.value = state.played;
-	}, []);
+	};
 
 	const handlePlay = () => {
 		if (!isPlaying) setIsPlaying(true);
@@ -48,12 +48,9 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 		if (isPlaying) setIsPlaying(false);
 	};
 
-	const handleChangeVolume = useCallback(
-		(value: number) => {
-			if (setVolume) setVolume(value);
-		},
-		[setVolume],
-	);
+	const handleChangeVolume = (value: number) => {
+		if (setVolume) setVolume(value);
+	};
 
 	return (
 		<div

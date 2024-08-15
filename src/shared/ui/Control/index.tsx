@@ -1,4 +1,4 @@
-import { type ForwardedRef, useCallback } from "react";
+import type { ForwardedRef } from "react";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import { play, pause, volumeMediumOutline, volumeMute } from "ionicons/icons";
@@ -19,15 +19,15 @@ const Control = forwardRef<HTMLIonProgressBarElement, ControlProps>(
 		const [animatedIsPlaying, setAnimatedIsPlaying] = useAnimation(500);
 		const [animatedToggleMute, setAnimatedToggleMute] = useAnimation(500);
 
-		const handleTogglePlayPause = useCallback(() => {
+		const handleTogglePlayPause = () => {
 			setAnimatedIsPlaying(true);
 			onTogglePlayPause();
-		}, [onTogglePlayPause, setAnimatedIsPlaying]);
+		};
 
-		const handleToggleMute = useCallback(() => {
+		const handleToggleMute = () => {
 			setAnimatedToggleMute(true);
 			onChangeVolume(volume === 0 ? 1 : 0);
-		}, [volume, onChangeVolume, setAnimatedToggleMute]);
+		};
 
 		return (
 			<div className="w-full h-full absolute top-0 left-0">

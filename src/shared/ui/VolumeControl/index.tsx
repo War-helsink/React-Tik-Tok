@@ -1,4 +1,4 @@
-import { type FC, useCallback, useState } from "react";
+import { type FC, useState } from "react";
 
 import { volumeMediumOutline, volumeMute } from "ionicons/icons";
 
@@ -13,15 +13,16 @@ import {
 import type { VolumeControlProps } from "../../model/props";
 import styles from "./styles.module.scss";
 
-const VolumeControl: FC<VolumeControlProps> = ({ volume, onChangeVolume, onToggleMute}) => {
+const VolumeControl: FC<VolumeControlProps> = ({
+	volume,
+	onChangeVolume,
+	onToggleMute,
+}) => {
 	const [isHovered, setIsHovered] = useState(false);
 
-	const handleVolumeChange = useCallback(
-		(ev: CustomEvent<RangeChangeEventDetail>) => {
-			onChangeVolume(Number(ev.detail.value) / 100);
-		},
-		[onChangeVolume],
-	);
+	const handleVolumeChange = (ev: CustomEvent<RangeChangeEventDetail>) => {
+		onChangeVolume(Number(ev.detail.value) / 100);
+	};
 
 	const handleMouseEnter = () => {
 		setIsHovered(true);

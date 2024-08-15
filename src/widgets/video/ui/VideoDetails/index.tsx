@@ -1,4 +1,4 @@
-import { type FC, useMemo } from "react";
+import type { FC } from "react";
 import { useVolume } from "app/providers/VolumeContext";
 import { IonIcon } from "@ionic/react";
 import { musicalNotes } from "ionicons/icons";
@@ -14,9 +14,7 @@ const VideoDetails: FC<VideoDetailsProps> = ({
 	playing = false,
 }) => {
 	const { volume, setVolume } = useVolume();
-	const titleWords = useMemo<string[]>(() => {
-		return videoData.title.trim().split(" ");
-	}, [videoData]);
+	const titleWords = videoData.title.trim().split(" ");
 
 	return (
 		<div className="relative h-full md:w-[430px]">

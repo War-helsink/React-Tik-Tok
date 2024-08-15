@@ -1,4 +1,4 @@
-import { type FC, useMemo } from "react";
+import type { FC } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -25,48 +25,42 @@ const UserInfo: FC<UserInfoProps> = ({
 }) => {
 	const { t } = useTranslation();
 
-	const statsData = useMemo(
-		() => [
-			{
-				text: t("following"),
-				count: followingCount,
-			},
-			{
-				text: t("followers"),
-				count: followerCount,
-			},
-			{
-				text: t("likes"),
-				count: heartCount,
-			},
-			{
-				text: t("videos"),
-				count: videoCount,
-			},
-		],
-		[t, followingCount, followerCount, heartCount, videoCount],
-	);
+	const statsData = [
+		{
+			text: t("following"),
+			count: followingCount,
+		},
+		{
+			text: t("followers"),
+			count: followerCount,
+		},
+		{
+			text: t("likes"),
+			count: heartCount,
+		},
+		{
+			text: t("videos"),
+			count: videoCount,
+		},
+	];
 
-	const socialsData = useMemo(
-		() => [
-			{
-				link: "https://www.youtube.com",
-				icon: logoYoutube,
-				id: user.youtube_channel_id,
-			},
-			{
-				link: "https://x.com",
-				icon: logoTwitter,
-				id: user.twitter_id,
-			},
-			{
-				link: "https://www.instagram.com",
-				icon: logoInstagram,
-				id: user.ins_id,
-			},
-		],
-		[user],
-	);
+	const socialsData = [
+		{
+			link: "https://www.youtube.com",
+			icon: logoYoutube,
+			id: user.youtube_channel_id,
+		},
+		{
+			link: "https://x.com",
+			icon: logoTwitter,
+			id: user.twitter_id,
+		},
+		{
+			link: "https://www.instagram.com",
+			icon: logoInstagram,
+			id: user.ins_id,
+		},
+	];
 
 	return (
 		<div className="flex gap-7">
