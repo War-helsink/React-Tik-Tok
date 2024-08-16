@@ -8,7 +8,7 @@ const SingleVideo: FC<SingleVideoProps> = ({ videoData }) => {
 	const { volume, setVolume } = useVolume();
 
 	return (
-		<section className="relative flex-grow h-full px-20">
+		<section className="relative h-full px-20">
 			<VideoPlayer
 				loop
 				controls

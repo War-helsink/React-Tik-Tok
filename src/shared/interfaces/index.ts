@@ -1,4 +1,4 @@
-export { type Volume, createVolume, isVolumeInRange} from "./volume";
+export { type Volume, createVolume, isVolumeInRange } from "./volume";
 
 export type SkeletonType = "item" | "itemV2" | "itemV3";
 export type DirectionType = "grid" | "row" | "column";
@@ -16,11 +16,44 @@ export interface Author {
 	avatar: string;
 }
 
+export interface Comment {
+	id: string;
+	video_id: string;
+	text: string;
+	create_time: number;
+	digg_count: number;
+	reply_total: number;
+	user: CommentUser;
+	status: number;
+}
+
 export interface CommerceInfo {
 	adv_promotable: boolean;
 	auction_ad_invited: boolean;
 	branded_content_type: number;
 	with_comment_filter_words: boolean;
+}
+
+export interface CommentUser {
+	id: string;
+	region: string;
+	sec_uid: string;
+	unique_id: string;
+	nickname: string;
+	signature: string;
+	avatar: string;
+	verified: boolean;
+	secret: boolean;
+	aweme_count: number;
+	following_count: number;
+	follower_count: number;
+	favoriting_count: number;
+	total_favorited: number;
+	ins_id: string;
+	youtube_channel_title: string;
+	youtube_channel_id: string;
+	twitter_name: string;
+	twitter_id: string;
 }
 
 export interface MusicInfo {

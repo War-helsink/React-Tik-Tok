@@ -2,7 +2,7 @@ import type { SkeletonType, DirectionType } from "shared/interfaces";
 
 export interface VolumeControlProps {
 	volume: number;
-	onToggleMute: () => void
+	onToggleMute: () => void;
 	onChangeVolume: (value: number) => void;
 }
 
@@ -12,6 +12,10 @@ export interface ControlProps {
 
 	onTogglePlayPause: () => void;
 	onChangeVolume: (value: number) => void;
+}
+
+export interface LoaderProps {
+	className?: string;
 }
 
 export interface VideoPlayerProps {
@@ -25,7 +29,7 @@ export interface VideoPlayerProps {
 	playing?: boolean;
 	loop?: boolean;
 	progressInterval?: number;
-	setVolume?: (value: number)=> void;
+	setVolume?: (value: number) => void;
 }
 
 export interface SkeletonProps {

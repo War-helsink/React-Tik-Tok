@@ -4,6 +4,8 @@ import type { TypedUseSelectorHook } from "react-redux";
 
 import { feedApi } from "entities/feed";
 import { userApi } from "entities/user";
+import { videoApi } from "entities/video";
+import { commentApi } from "entities/comment";
 
 import { rootReducer } from "./appReducer";
 
@@ -13,6 +15,8 @@ export const store = configureStore({
 		getDefaultMiddleware().concat(
 			feedApi.middleware,
 			userApi.middleware,
+			videoApi.middleware,
+			commentApi.middleware,
 		),
 });
 

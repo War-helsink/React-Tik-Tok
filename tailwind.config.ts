@@ -13,12 +13,13 @@ const config: Config = {
 		},
 		colors: {
 			background: {
+				default: "var(--background-default)",
 				contrast: "var(--background-contrast)",
-
+				toolbar: "var(--ion-toolbar-background, var(--ion-background-color, #fff))",
 			},
 			border: {
 				default:
-					"var(--ion-toolbar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, #c1c4cd)))) !important",
+					"var(--ion-toolbar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, #c1c4cd))))",
 				contrast: "var(--border-contrast)",
 			},
 			primary: {

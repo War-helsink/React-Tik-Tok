@@ -26,6 +26,14 @@
 		"notFound": "Not Found",
 		"mainPage": "On the main page"
 	},
+	"comment": {
+		"name": "Comments",
+		"login": "Log in to comment",
+		"noComments": "Be the first to comment!"
+	},
+
+	"copy_link": "Copy link",
+	"copied_toast": "Copied",
 
 	"noMoreData": "No more data to load."
 }
